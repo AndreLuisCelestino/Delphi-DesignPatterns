@@ -1,0 +1,24 @@
+{  
+   "dados":[  
+      {  
+         "codigo":1,
+         "nome":"Wes Gibbins",
+         "cidade":"Chicago"
+      },
+      {  
+         "codigo":2,
+         "nome":"Saul Goodman",
+         "cidade":"Atlanta"
+      },
+      {  
+         "codigo":3,
+         "nome":"André Celestino",
+         "cidade":"Maringá"
+      },
+      {  
+         "codigo":4,
+         "nome":"Beatriz Makiyama",
+         "cidade":"Florianópolis"
+      }
+   ]
+}

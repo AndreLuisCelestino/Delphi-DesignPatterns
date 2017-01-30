@@ -1,0 +1,22 @@
+<importacao>
+    <dados>
+      <codigo>1</codigo>
+      <nome>Axl Rose</nome>
+      <cidade>Las Vegas</cidade>
+    </dados>
+    <dados>
+      <codigo>2</codigo>
+      <nome>Zakk Wylde</nome>
+      <cidade>New Jersey</cidade>
+    </dados>
+    <dados>
+      <codigo>3</codigo>
+      <nome>Fernando Anitelli</nome>
+      <cidade>Osasco</cidade>
+    </dados>
+    <dados>
+      <codigo>4</codigo>
+      <nome>Raymond Reddington</nome>
+      <cidade>San Diego</cidade>
+    </dados>
+</importacao>
