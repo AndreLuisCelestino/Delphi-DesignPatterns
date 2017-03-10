@@ -9,7 +9,7 @@ type
   { Concrete Component }
   TLogExcecao = class(TInterfacedObject, ILogExcecao)
   private
-    FoExcecao: Exception;
+    Excecao: Exception;
 
     function ObterDadosExcecao: string;
   public
@@ -20,13 +20,13 @@ implementation
 
 constructor TLogExcecao.Create(Excecao: Exception);
 begin
-  FoExcecao := Excecao;
+  Self.Excecao := Excecao;
 end;
 
 function TLogExcecao.ObterDadosExcecao: string;
 begin
   // retorna a mensagem de exceção
-  result := 'Mensagem: ' + FoExcecao.Message;
+  result := 'Mensagem: ' + Excecao.Message;
 end;
 
 end.

@@ -74,7 +74,7 @@ object fFormulario: TfFormulario
   end
   object ApplicationEvents: TApplicationEvents
     OnException = ApplicationEventsException
-    Left = 12
-    Top = 264
+    Left = 44
+    Top = 248
   end
 end

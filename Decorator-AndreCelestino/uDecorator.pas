@@ -9,7 +9,7 @@ type
   { Decorator }
   TDecorator = class(TInterfacedObject, ILogExcecao)
   protected
-    FoLogExcecao: ILogExcecao;
+    LogExcecao: ILogExcecao;
 
     function ObterDadosExcecao: string; virtual;
   public
@@ -21,12 +21,12 @@ implementation
 constructor TDecorator.Create(LogExcecao: ILogExcecao);
 begin
   // armazena uma referência para o objeto que será decorado
-  FoLogExcecao := LogExcecao;
+  Self.LogExcecao := LogExcecao;
 end;
 
 function TDecorator.ObterDadosExcecao: string;
 begin
-  result := FoLogExcecao.ObterDadosExcecao;
+  result := LogExcecao.ObterDadosExcecao;
   result := result + #13#10;
 end;
 

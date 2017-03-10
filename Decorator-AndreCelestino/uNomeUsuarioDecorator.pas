@@ -30,13 +30,13 @@ end;
 
 function TNomeUsuarioDecorator.ObterNomeUsuario: string;
 var
-  nSize: DWord;
+  Size: DWord;
 begin
   // retorna o login do usuário do sistema operacional
-  nSize := 1024;
-  SetLength(result, nSize);
-  GetUserName(PChar(result), nSize);
-  SetLength(result, nSize - 1);
+  Size := 1024;
+  SetLength(result, Size);
+  GetUserName(PChar(result), Size);
+  SetLength(result, Size - 1);
 end;
 
 end.
