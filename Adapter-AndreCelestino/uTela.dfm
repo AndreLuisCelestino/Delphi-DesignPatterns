@@ -112,6 +112,7 @@ object fTela: TfTela
     EditMask = '99999-999;0;_'
     MaxLength = 9
     TabOrder = 0
+    Text = ''
   end
   object EditLogradouro: TEdit
     Left = 448

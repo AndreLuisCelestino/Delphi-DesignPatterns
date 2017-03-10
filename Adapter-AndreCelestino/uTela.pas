@@ -34,15 +34,15 @@ var
 implementation
 
 uses
-  uWebServiceViaCEP, uWebServiceCorreios, uComunicador, uAdapter;
+  uWebServiceViaCEP, uWebServiceCorreios, uComunicador, uAdapter, System.UITypes;
 
 {$R *.dfm}
 
 procedure TfTela.btnViaCEPClick(Sender: TObject);
 var
-  oWebServiceViaCEP: TWebServiceViaCEP;
-  oComunicador: TComunicador;
-  slRetorno: TStringList;
+  WebServiceViaCEP: TWebServiceViaCEP;
+  Comunicador: TComunicador;
+  Retorno: TStringList;
 begin
   // se o CEP não for válido, nada é executado
   if not ValidarCEP then
@@ -53,63 +53,61 @@ begin
   IndicarStatusDeProcessamento;
 
   // instancia o objeto da classe de consulta do ViaCEP
-  oWebServiceViaCEP := TWebServiceViaCEP.Create;
+  WebServiceViaCEP := TWebServiceViaCEP.Create;
 
   // instancia o comunicador (Target), injetando o objeto de consulta
-  oComunicador := TComunicador.Create(oWebServiceViaCEP);
+  Comunicador := TComunicador.Create(WebServiceViaCEP);
 
   // instancia uma TStringList para receber o retorno
-  slRetorno := TStringList.Create;
+  Retorno := TStringList.Create;
   try
     // invoca o método de consulta do Target e recebe o retorno
-    slRetorno := oComunicador.ConsultarEndereco(EditCEP.Text);
+    Retorno := Comunicador.ConsultarEndereco(EditCEP.Text);
 
     // exibe os dados
-    EditLogradouro.Text := slRetorno.Values['Logradouro'];
-    EditBairro.Text := slRetorno.Values['Bairro'];
-    EditCidade.Text := slRetorno.Values['Cidade'];
+    EditLogradouro.Text := Retorno.Values['Logradouro'];
+    EditBairro.Text := Retorno.Values['Bairro'];
+    EditCidade.Text := Retorno.Values['Cidade'];
   finally
     // libera os objetos da memória
-    FreeAndNil(slRetorno);
-    FreeAndNil(oComunicador);
+    FreeAndNil(Retorno);
+    FreeAndNil(Comunicador);
   end;
 end;
 
 procedure TfTela.btnCorreiosClick(Sender: TObject);
 var
-  oWebServiceCorreios: TWebServiceCorreios;
-  oAdapter: TAdapter;
-  oComunicador: TComunicador;
-  slRetorno: TStringList;
+  WebServiceCorreios: TWebServiceCorreios;
+  Adapter: TAdapter;
+  Comunicador: TComunicador;
+  Retorno: TStringList;
 begin
   // se o CEP não for válido, nada é executado
   if not ValidarCEP then
-  begin
     Exit;
-  end;
 
   IndicarStatusDeProcessamento;
 
   // instancia o objeto da classe de consulta dos correios (Adaptee)
-  oWebServiceCorreios := TWebServiceCorreios.Create;
+  WebServiceCorreios := TWebServiceCorreios.Create;
 
   // instancia o adaptador (Adapter)
-  oAdapter := TAdapter.Create(oWebServiceCorreios);
+  Adapter := TAdapter.Create(WebServiceCorreios);
 
   // instancia o comunicador (Target), injetando o adaptador
-  oComunicador := TComunicador.Create(oAdapter);
+  Comunicador := TComunicador.Create(Adapter);
 
   // instancia uma TStringList para receber o retorno
-  slRetorno := TStringList.Create;
+  Retorno := TStringList.Create;
   try
     try
       // invoca o método de consulta e recebe o retorno
-      slRetorno := oComunicador.ConsultarEndereco(EditCEP.Text);
+      Retorno := Comunicador.ConsultarEndereco(EditCEP.Text);
 
       // preenche os dados
-      EditLogradouro.Text := slRetorno.Values['Logradouro'];
-      EditBairro.Text := slRetorno.Values['Bairro'];
-      EditCidade.Text := slRetorno.Values['Cidade'];
+      EditLogradouro.Text := Retorno.Values['Logradouro'];
+      EditBairro.Text := Retorno.Values['Bairro'];
+      EditCidade.Text := Retorno.Values['Cidade'];
     except
       // se ocorrer alguma exceção na comunicação com o WebService,
       // os textos dos campos são apagados
@@ -119,8 +117,8 @@ begin
     end;
   finally
     // libera os objetos da memória
-    FreeAndNil(slRetorno);
-    FreeAndNil(oComunicador);
+    FreeAndNil(Retorno);
+    FreeAndNil(Comunicador);
   end;
 end;
 

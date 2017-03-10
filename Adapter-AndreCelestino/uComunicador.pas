@@ -11,14 +11,14 @@ type
   private
     // variável para armazenar a instância do objeto da classe de consulta,
     // que pode ser do ViaCEP ou dos Correios (adaptado)
-    FoWebServiceViaCEP: IWebServiceViaCEP;
+    WebServiceViaCEP: IWebServiceViaCEP;
   public
-    constructor Create(poWebServiceViaCEP: IWebServiceViaCEP);
+    constructor Create(WebServiceViaCEP: IWebServiceViaCEP);
     destructor Destroy; override;
 
     // método responsável por utilizar o objeto da classe de consulta
     // para buscar o CEP e preencher o retorno
-    function ConsultarEndereco(const psCEP: string): TStringList;
+    function ConsultarEndereco(const CEP: string): TStringList;
   end;
 
 implementation
@@ -28,38 +28,37 @@ uses
 
 { TComunicador }
 
-function TComunicador.ConsultarEndereco(const psCEP: string): TStringList;
+function TComunicador.ConsultarEndereco(const CEP: string): TStringList;
 var
-  slDados: TStringList;
+  Dados: TStringList;
 begin
   // chama o método do objeto da classe de consulta para buscar o endereço
-  FoWebServiceViaCEP.ConsultarEnderecoWebService(psCEP);
+  WebServiceViaCEP.ConsultarEnderecoWebService(CEP);
 
   // instancia uma TStringList e a preenche com os dados de retorno
-  slDados := TStringList.Create;
-  slDados.Values['Logradouro'] := FoWebServiceViaCEP.ObterLogradouro;
-  slDados.Values['Bairro'] := FoWebServiceViaCEP.ObterBairro;
-  slDados.Values['Cidade'] := FoWebServiceViaCEP.ObterCidade;
+  Dados := TStringList.Create;
+  Dados.Values['Logradouro'] := WebServiceViaCEP.ObterLogradouro;
+  Dados.Values['Bairro'] := WebServiceViaCEP.ObterBairro;
+  Dados.Values['Cidade'] := WebServiceViaCEP.ObterCidade;
 
   // retorna a TStringList ao chamador
-  result := slDados;
+  result := Dados;
 end;
 
-constructor TComunicador.Create(poWebServiceViaCEP: IWebServiceViaCEP);
+constructor TComunicador.Create(WebServiceViaCEP: IWebServiceViaCEP);
 begin
   { Atribui o objeto do parâmetro à variável da classe.
     Embora o nome seja "FoWebServiceViaCEP", este objeto pode ser:
     - o objeto da classe de consulta do ViaCEP;
     - o adaptador da classe de consulta dos Correios;
     Pois ambos implementam a Interface "IWebServiceConsulta" }
-  FoWebServiceViaCEP := poWebServiceViaCEP;
+  Self.WebServiceViaCEP := WebServiceViaCEP;
 end;
 
 destructor TComunicador.Destroy;
 begin
-  FoWebServiceViaCEP := nil;
+  WebServiceViaCEP := nil;
   inherited;
 end;
 
 end.
- 
