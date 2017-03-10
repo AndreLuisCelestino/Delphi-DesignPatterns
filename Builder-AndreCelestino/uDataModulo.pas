@@ -6,17 +6,17 @@ uses
   SysUtils, Classes, DB, DBClient;
 
 type
-  TdmProdutos = class(TDataModule)
-    cdsProdutos: TClientDataSet;
-    cdsProdutosCodigo: TIntegerField;
-    cdsProdutosDescricao: TStringField;
-    cdsProdutosValor: TFloatField;
+  TDataModuleProdutos = class(TDataModule)
+    ClientDataSetProdutos: TClientDataSet;
+    ClientDataSetProdutosCodigo: TIntegerField;
+    ClientDataSetProdutosDescricao: TStringField;
+    ClientDataSetProdutosValor: TFloatField;
   public
-    function ConsultarValorProduto(const psProduto: string): real;
+    function ConsultarValorProduto(const Produto: string): real;
   end;
 
 var
-  dmProdutos: TdmProdutos;
+  DataModuleProdutos: TDataModuleProdutos;
 
 implementation
 
@@ -24,18 +24,18 @@ implementation
 
 { TdmProdutos }
 
-function TdmProdutos.ConsultarValorProduto(const psProduto: string): real;
+function TDataModuleProdutos.ConsultarValorProduto(const Produto: string): real;
 begin
   result := 0;
-  dmProdutos.cdsProdutos.DisableControls;
+  ClientDataSetProdutos.DisableControls;
 
-  if dmProdutos.cdsProdutos.Locate('Descricao', psProduto, []) then
+  if ClientDataSetProdutos.Locate('Descricao', Produto, []) then
   begin
-    result := dmProdutos.cdsProdutos.FieldByName('Valor').AsFloat;
+    result := ClientDataSetProdutos.FieldByName('Valor').AsFloat;
   end;
 
-  dmProdutos.cdsProdutos.First;
-  dmProdutos.cdsProdutos.EnableControls;
+  ClientDataSetProdutos.First;
+  ClientDataSetProdutos.EnableControls;
 end;
 
 end.

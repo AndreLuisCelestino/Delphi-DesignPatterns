@@ -3,7 +3,7 @@ program ExemploBuilder;
 uses
   Forms,
   uTela in 'uTela.pas' {fTela},
-  uDataModulo in 'uDataModulo.pas' {dmProdutos: TDataModule},
+  uDataModulo in 'uDataModulo.pas' {DataModuleProdutos: TDataModule},
   uBuilder in 'uBuilder.pas',
   uInterfaces in 'uInterfaces.pas',
   uProduto in 'uProduto.pas';
@@ -12,7 +12,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TdmProdutos, dmProdutos);
+  Application.CreateForm(TDataModuleProdutos, DataModuleProdutos);
   Application.CreateForm(TfTela, fTela);
   Application.Run;
 end.

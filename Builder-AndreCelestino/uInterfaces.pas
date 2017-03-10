@@ -4,7 +4,7 @@ interface
 
 type
   ICestaProdutos = interface
-    procedure AdicionarProdutoNaCesta(const psProduto: string);
+    procedure AdicionarProdutoNaCesta(const Produto: string);
     function ObterListaProdutos: string;
     function ObterValorTotalCesta: string;
   end;

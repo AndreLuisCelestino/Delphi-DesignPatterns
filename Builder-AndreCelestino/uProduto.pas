@@ -10,15 +10,15 @@ type
   TCestaProdutos = class(TInterfacedObject, ICestaProdutos)
   private
     // armazena a lista de produtos da cesta
-    FslListaProdutos: TStringList;
+    ListaProdutos: TStringList;
 
     // armazena o valor total da cesta
-    FnValorTotalCesta: real;
+    ValorTotalCesta: real;
   public
     constructor Create;
     destructor Destroy; override;
 
-    procedure AdicionarProdutoNaCesta(const psProduto: string); virtual;
+    procedure AdicionarProdutoNaCesta(const Produto: string); virtual;
     function ObterListaProdutos: string;
     function ObterValorTotalCesta: string;
   end;
@@ -30,40 +30,40 @@ uses
 
 { TCesta }
 
-procedure TCestaProdutos.AdicionarProdutoNaCesta(const psProduto: string);
+procedure TCestaProdutos.AdicionarProdutoNaCesta(const Produto: string);
 var
-  nValorProduto: real;
+  ValorProduto: real;
 begin
   // consulta o valor do produto
-  nValorProduto := dmProdutos.ConsultarValorProduto(psProduto);
+  ValorProduto := DataModuleProdutos.ConsultarValorProduto(Produto);
 
   // atualiza o valor total da cesta
-  FnValorTotalCesta := FnValorTotalCesta + nValorProduto;
+  ValorTotalCesta := ValorTotalCesta + ValorProduto;
 
   // adiciona o produto na lista de produtos
-  FslListaProdutos.Add(Format('Produto: %s - %.2f', [psProduto, nValorProduto]));
+  ListaProdutos.Add(Format('Produto: %s - %.2f', [Produto, ValorProduto]));
 end;
 
 constructor TCestaProdutos.Create;
 begin
-  FslListaProdutos := TStringList.Create;
-  FnValorTotalCesta := 0;
+  ListaProdutos := TStringList.Create;
+  ValorTotalCesta := 0;
 end;
 
 destructor TCestaProdutos.Destroy;
 begin
-  FreeAndNil(FslListaProdutos);
+  FreeAndNil(ListaProdutos);
   inherited;
 end;
 
 function TCestaProdutos.ObterListaProdutos: string;
 begin
-  result := FslListaProdutos.Text;
+  result := ListaProdutos.Text;
 end;
 
 function TCestaProdutos.ObterValorTotalCesta: string;
 begin
-  result := 'Total: ' + Format('%.2f', [FnValorTotalCesta]);
+  result := 'Total: ' + Format('%.2f', [ValorTotalCesta]);
 end;
 
 end.
