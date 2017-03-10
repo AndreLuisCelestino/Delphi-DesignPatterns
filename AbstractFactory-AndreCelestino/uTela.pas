@@ -9,7 +9,7 @@ uses
 type
   TfAbstractFactory = class(TForm)
     gbDadosNotebook: TGroupBox;
-    gbMarcas: TRadioGroup;
+    GroupBoxMarcas: TRadioGroup;
     edtNomeNotebook: TEdit;
     edtTela: TEdit;
     edtMemoriaRAM: TEdit;
@@ -23,7 +23,7 @@ type
     edtNomeDesktop: TEdit;
     edtProcessador: TEdit;
     edtHD: TEdit;
-    procedure gbMarcasClick(Sender: TObject);
+    procedure GroupBoxMarcasClick(Sender: TObject);
   private
     Marca: IFactoryMarca;
 
@@ -49,14 +49,14 @@ const
 procedure TfAbstractFactory.CriarInstanciaMarca;
 begin
   // Única estrutura condicional da aplicação
-  case gbMarcas.ItemIndex of
+  case GroupBoxMarcas.ItemIndex of
     nOPCAO_DELL: Marca := TDell.Create;
     nOPCAO_APPLE: Marca := TApple.Create;
     nOPCAO_LENOVO: Marca := TLenovo.Create;
   end;
 end;
 
-procedure TfAbstractFactory.gbMarcasClick(Sender: TObject);
+procedure TfAbstractFactory.GroupBoxMarcasClick(Sender: TObject);
 begin
   CriarInstanciaMarca;
   MostrarDadosProdutos;

@@ -66,7 +66,7 @@ object fAbstractFactory: TfAbstractFactory
       TabOrder = 2
     end
   end
-  object gbMarcas: TRadioGroup
+  object GroupBoxMarcas: TRadioGroup
     Left = 24
     Top = 8
     Width = 321
@@ -78,7 +78,7 @@ object fAbstractFactory: TfAbstractFactory
       'Apple'
       'Lenovo')
     TabOrder = 1
-    OnClick = gbMarcasClick
+    OnClick = GroupBoxMarcasClick
   end
   object gbDadosDesktop: TGroupBox
     Left = 24
