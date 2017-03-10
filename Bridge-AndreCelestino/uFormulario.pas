@@ -10,12 +10,12 @@ type
   TfFormulario = class(TForm)
     ClientDataSetClientes: TClientDataSet;
     ClientDataSetProdutos: TClientDataSet;
-    GridClientes: TDBGrid;
-    GridProdutos: TDBGrid;
-    btnExportarClientesXLS: TBitBtn;
-    btnExportarClientesHTML: TBitBtn;
-    btnExportarProdutosXLS: TBitBtn;
-    btnExportarProdutosHTML: TBitBtn;
+    DBGridClientes: TDBGrid;
+    DBGridProdutos: TDBGrid;
+    BitBtnExportarClientesXLS: TBitBtn;
+    BitBtnExportarClientesHTML: TBitBtn;
+    BitBtnExportarProdutosXLS: TBitBtn;
+    BitBtnExportarProdutosHTML: TBitBtn;
     DataSourceClientes: TDataSource;
     DataSourceProdutos: TDataSource;
     ClientDataSetClientesCodigo: TIntegerField;
@@ -25,13 +25,13 @@ type
     ClientDataSetProdutosDescricao: TStringField;
     ClientDataSetProdutosEstoque: TIntegerField;
     Bevel: TBevel;
-    lbClientes: TLabel;
-    lbProdutos: TLabel;
+    LabelClientes: TLabel;
+    LabelProdutos: TLabel;
     procedure FormCreate(Sender: TObject);
-    procedure btnExportarClientesXLSClick(Sender: TObject);
-    procedure btnExportarClientesHTMLClick(Sender: TObject);
-    procedure btnExportarProdutosXLSClick(Sender: TObject);
-    procedure btnExportarProdutosHTMLClick(Sender: TObject);
+    procedure BitBtnExportarClientesXLSClick(Sender: TObject);
+    procedure BitBtnExportarClientesHTMLClick(Sender: TObject);
+    procedure BitBtnExportarProdutosXLSClick(Sender: TObject);
+    procedure BitBtnExportarProdutosHTMLClick(Sender: TObject);
   end;
 
 var
@@ -44,60 +44,60 @@ uses
 
 {$R *.dfm}
 
-procedure TfFormulario.btnExportarClientesXLSClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarClientesXLSClick(Sender: TObject);
 var
-  oExportador: IExportador;
+  Exportador: IExportador;
 begin
-  oExportador := TExportadorClientes.Create(TFormatoXLS.Create);
+  Exportador := TExportadorClientes.Create(TFormatoXLS.Create);
   try
-    oExportador.ExportarDados(ClientDataSetClientes.Data);
+    Exportador.ExportarDados(ClientDataSetClientes.Data);
   finally
-    oExportador := nil;
+    Exportador := nil;
   end;
 end;
 
-procedure TfFormulario.btnExportarClientesHTMLClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarClientesHTMLClick(Sender: TObject);
 var
-  oExportador: IExportador;
+  Exportador: IExportador;
 begin
-  oExportador := TExportadorClientes.Create(TFormatoHTML.Create);
+  Exportador := TExportadorClientes.Create(TFormatoHTML.Create);
   try
-    oExportador.ExportarDados(ClientDataSetClientes.Data);
+    Exportador.ExportarDados(ClientDataSetClientes.Data);
   finally
-    oExportador := nil;
+    Exportador := nil;
   end;
 end;
 
 procedure TfFormulario.FormCreate(Sender: TObject);
 var
-  sCaminhoAplicacao: string;
+  CaminhoAplicacao: string;
 begin
-  sCaminhoAplicacao := ExtractFilePath(Application.ExeName);
-  ClientDataSetClientes.LoadFromFile(sCaminhoAplicacao + 'Clientes.xml');
-  ClientDataSetProdutos.LoadFromFile(sCaminhoAplicacao + 'Produtos.xml');
+  CaminhoAplicacao := ExtractFilePath(Application.ExeName);
+  ClientDataSetClientes.LoadFromFile(CaminhoAplicacao + 'Clientes.xml');
+  ClientDataSetProdutos.LoadFromFile(CaminhoAplicacao + 'Produtos.xml');
 end;
 
-procedure TfFormulario.btnExportarProdutosXLSClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarProdutosXLSClick(Sender: TObject);
 var
-  oExportador: IExportador;
+  Exportador: IExportador;
 begin
-  oExportador := TExportadorProdutos.Create(TFormatoXLS.Create);
+  Exportador := TExportadorProdutos.Create(TFormatoXLS.Create);
   try
-    oExportador.ExportarDados(ClientDataSetProdutos.Data);
+    Exportador.ExportarDados(ClientDataSetProdutos.Data);
   finally
-    oExportador := nil;
+    Exportador := nil;
   end;
 end;
 
-procedure TfFormulario.btnExportarProdutosHTMLClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarProdutosHTMLClick(Sender: TObject);
 var
-  oExportador: IExportador;
+  Exportador: IExportador;
 begin
-  oExportador := TExportadorProdutos.Create(TFormatoHTML.Create);
+  Exportador := TExportadorProdutos.Create(TFormatoHTML.Create);
   try
-    oExportador.ExportarDados(ClientDataSetProdutos.Data);
+    Exportador.ExportarDados(ClientDataSetProdutos.Data);
   finally
-    oExportador := nil;
+    Exportador := nil;
   end;
 end;
 

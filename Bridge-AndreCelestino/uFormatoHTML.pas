@@ -9,7 +9,7 @@ type
   { Concrete Implementor }
   TFormatoHTML = class(TInterfacedObject, IFormato)
   private
-    FslHTML: TStringList;
+    HTML: TStringList;
 
     procedure CriarCabecalhoHTML;
   public
@@ -17,9 +17,9 @@ type
     destructor Destroy; override;
     
     procedure PularLinha;
-    procedure DesenharCabecalho(const psTitulo: string);
-    procedure ExportarCampo(const psValor: string);
-    procedure SalvarArquivo(const psNomeArquivo: string);
+    procedure DesenharCabecalho(const Titulo: string);
+    procedure ExportarCampo(const Valor: string);
+    procedure SalvarArquivo(const NomeArquivo: string);
   end;
 
 implementation
@@ -31,62 +31,62 @@ uses
 
 constructor TFormatoHTML.Create;
 begin
-  FslHTML := TStringList.Create;
+  HTML := TStringList.Create;
   CriarCabecalhoHTML;
 end;
 
 procedure TFormatoHTML.CriarCabecalhoHTML;
 begin
-  FslHTML.Add('<html>');
-  FslHTML.Add('<head>');
-  FslHTML.Add('<style>');
-  FslHTML.Add('body { font-family: Tahoma; }');
-  FslHTML.Add('table, td, th { border: 1px solid #ddd; text-align: left; }');
-  FslHTML.Add('table { border-collapse: collapse; width: 100%; }');
-  FslHTML.Add('</style>');
-  FslHTML.Add('<head>');
-  FslHTML.Add('</head>');
-  FslHTML.Add('<body>');
-  FslHTML.Add('<table>');
-  FslHTML.Add('<tr>');
+  HTML.Add('<html>');
+  HTML.Add('<head>');
+  HTML.Add('<style>');
+  HTML.Add('body { font-family: Tahoma; }');
+  HTML.Add('table, td, th { border: 1px solid #ddd; text-align: left; }');
+  HTML.Add('table { border-collapse: collapse; width: 100%; }');
+  HTML.Add('</style>');
+  HTML.Add('<head>');
+  HTML.Add('</head>');
+  HTML.Add('<body>');
+  HTML.Add('<table>');
+  HTML.Add('<tr>');
 end;
 
-procedure TFormatoHTML.DesenharCabecalho(const psTitulo: string);
+procedure TFormatoHTML.DesenharCabecalho(const Titulo: string);
 begin
-  FslHTML.Add(Format('<th>%s</th>', [psTitulo]));
+  HTML.Add(Format('<th>%s</th>', [Titulo]));
 end;
 
 destructor TFormatoHTML.Destroy;
 begin
-  FreeAndNil(FslHTML);
+  FreeAndNil(HTML);
   inherited;
 end;
 
-procedure TFormatoHTML.ExportarCampo(const psValor: string);
+procedure TFormatoHTML.ExportarCampo(const Valor: string);
 begin
-  FslHTML.Add(Format('<td>%s</td>', [psValor]));
+  HTML.Add(Format('<td>%s</td>', [Valor]));
 end;
 
 procedure TFormatoHTML.PularLinha;
 begin
-  FslHTML.Add('</tr><tr>');
+  HTML.Add('</tr><tr>');
 end;
 
-procedure TFormatoHTML.SalvarArquivo(const psNomeArquivo: string);
+procedure TFormatoHTML.SalvarArquivo(const NomeArquivo: string);
 var
-  sCaminhoAplicacao: string;
-  sNomeArquivo: string;
+  CaminhoAplicacao: string;
+  NomeCompleto: string;
 begin
-  FslHTML.Add('</tr>');
-  FslHTML.Add('</table>');
-  FslHTML.Add('</body>');
-  FslHTML.Add('</html>');
+  HTML.Add('</tr>');
+  HTML.Add('</table>');
+  HTML.Add('</body>');
+  HTML.Add('</html>');
 
-  sCaminhoAplicacao := ExtractFilePath(Application.ExeName);
-  sNomeArquivo := Format('%s%s.html', [sCaminhoAplicacao, psNomeArquivo]);
-  DeleteFile(PAnsiChar(sNomeArquivo));
-  FslHTML.SaveToFile(sNomeArquivo);
-  ShellExecute(0, nil, PChar(sNomeArquivo), nil,  nil, SW_SHOWNORMAL);
+  CaminhoAplicacao := ExtractFilePath(Application.ExeName);
+  NomeCompleto := Format('%s%s.html', [CaminhoAplicacao, NomeArquivo]);
+  DeleteFile(PWideChar(NomeCompleto));
+  HTML.SaveToFile(NomeCompleto);
+  ShellExecute(0, nil, PChar(NomeCompleto), nil,  nil, SW_SHOWNORMAL);
 end;
 
 end.

@@ -6,9 +6,9 @@ type
   { Implementor }
   IFormato = interface
     procedure PularLinha;
-    procedure DesenharCabecalho(const psTitulo: string);
-    procedure ExportarCampo(const psValor: string);
-    procedure SalvarArquivo(const psNomeArquivo: string);
+    procedure DesenharCabecalho(const Titulo: string);
+    procedure ExportarCampo(const Valor: string);
+    procedure SalvarArquivo(const NomeArquivo: string);
   end;
 
 implementation

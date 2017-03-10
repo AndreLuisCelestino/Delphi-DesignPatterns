@@ -24,7 +24,7 @@ object fFormulario: TfFormulario
     Height = 227
     Shape = bsLeftLine
   end
-  object lbClientes: TLabel
+  object LabelClientes: TLabel
     Left = 8
     Top = 8
     Width = 48
@@ -37,7 +37,7 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lbProdutos: TLabel
+  object LabelProdutos: TLabel
     Left = 424
     Top = 8
     Width = 54
@@ -50,7 +50,7 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object GridClientes: TDBGrid
+  object DBGridClientes: TDBGrid
     Left = 8
     Top = 24
     Width = 385
@@ -69,7 +69,6 @@ object fFormulario: TfFormulario
         FieldName = 'Codigo'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Width = 50
         Visible = True
       end
       item
@@ -83,29 +82,29 @@ object fFormulario: TfFormulario
         Expanded = False
         FieldName = 'Cidade'
         Title.Alignment = taCenter
-        Width = 150
+        Width = 135
         Visible = True
       end>
   end
-  object btnExportarClientesXLS: TBitBtn
+  object BitBtnExportarClientesXLS: TBitBtn
     Left = 8
     Top = 226
     Width = 120
     Height = 25
     Caption = 'Exportar para XLS'
     TabOrder = 1
-    OnClick = btnExportarClientesXLSClick
+    OnClick = BitBtnExportarClientesXLSClick
   end
-  object btnExportarClientesHTML: TBitBtn
+  object BitBtnExportarClientesHTML: TBitBtn
     Left = 136
     Top = 226
     Width = 120
     Height = 25
     Caption = 'Exportar para HTML'
     TabOrder = 2
-    OnClick = btnExportarClientesHTMLClick
+    OnClick = BitBtnExportarClientesHTMLClick
   end
-  object GridProdutos: TDBGrid
+  object DBGridProdutos: TDBGrid
     Left = 424
     Top = 24
     Width = 385
@@ -142,36 +141,36 @@ object fFormulario: TfFormulario
         Visible = True
       end>
   end
-  object btnExportarProdutosXLS: TBitBtn
+  object BitBtnExportarProdutosXLS: TBitBtn
     Left = 424
     Top = 226
     Width = 120
     Height = 25
     Caption = 'Exportar para XLS'
     TabOrder = 4
-    OnClick = btnExportarProdutosXLSClick
+    OnClick = BitBtnExportarProdutosXLSClick
   end
-  object btnExportarProdutosHTML: TBitBtn
+  object BitBtnExportarProdutosHTML: TBitBtn
     Left = 552
     Top = 226
     Width = 120
     Height = 25
     Caption = 'Exportar para HTML'
     TabOrder = 5
-    OnClick = btnExportarProdutosHTMLClick
+    OnClick = BitBtnExportarProdutosHTMLClick
   end
   object ClientDataSetClientes: TClientDataSet
+    PersistDataPacket.Data = {
+      5D0000009619E0BD0100000018000000030000000000030000005D0006436F64
+      69676F0400010000000000044E6F6D6501004900000001000557494454480200
+      0200320006436964616465010049000000010005574944544802000200320000
+      00}
     Active = True
     Aggregates = <>
     IndexFieldNames = 'Codigo'
     Params = <>
     Left = 12
     Top = 189
-    Data = {
-      5D0000009619E0BD0100000018000000030000000000030000005D0006436F64
-      69676F0400010000000000044E6F6D6501004900000001000557494454480200
-      0200320006436964616465010049000000010005574944544802000200320000
-      00}
     object ClientDataSetClientesCodigo: TIntegerField
       FieldName = 'Codigo'
     end
@@ -190,15 +189,15 @@ object fFormulario: TfFormulario
     Top = 189
   end
   object ClientDataSetProdutos: TClientDataSet
+    PersistDataPacket.Data = {
+      570000009619E0BD010000001800000003000000000003000000570006436F64
+      69676F04000100000000000944657363726963616F0100490000000100055749
+      445448020002003200074573746F71756504000100000000000000}
     Active = True
     Aggregates = <>
     Params = <>
     Left = 432
     Top = 190
-    Data = {
-      570000009619E0BD010000001800000003000000000003000000570006436F64
-      69676F04000100000000000944657363726963616F0100490000000100055749
-      445448020002003200074573746F71756504000100000000000000}
     object ClientDataSetProdutosCodigo: TIntegerField
       FieldName = 'Codigo'
     end

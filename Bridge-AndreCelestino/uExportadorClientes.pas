@@ -8,11 +8,11 @@ uses
 type
   TExportadorClientes = class(TInterfacedObject, IExportador)
   private
-    FoFormato: IFormato;
+    Formato: IFormato;
     procedure EscreverCabecalho;
   public
-    constructor Create(poFormato: IFormato);
-    procedure ExportarDados(const pvDados: olevariant);
+    constructor Create(Formato: IFormato);
+    procedure ExportarDados(const Dados: olevariant);
   end;
 
 implementation
@@ -22,19 +22,19 @@ uses
 
 { TExportadorClientes }
 
-constructor TExportadorClientes.Create(poFormato: IFormato);
+constructor TExportadorClientes.Create(Formato: IFormato);
 begin
-  FoFormato := poFormato;
+  Self.Formato := Formato;
 end;
 
 procedure TExportadorClientes.EscreverCabecalho;
 begin
-  FoFormato.DesenharCabecalho('Código');
-  FoFormato.DesenharCabecalho('Nome');
-  FoFormato.DesenharCabecalho('Cidade');
+  Formato.DesenharCabecalho('Código');
+  Formato.DesenharCabecalho('Nome');
+  Formato.DesenharCabecalho('Cidade');
 end;
 
-procedure TExportadorClientes.ExportarDados(const pvDados: olevariant);
+procedure TExportadorClientes.ExportarDados(const Dados: olevariant);
 var
   cdsDados: TClientDataSet;
   nContador: integer;
@@ -42,18 +42,18 @@ begin
   EscreverCabecalho;
   cdsDados := TClientDataSet.Create(nil);
   try
-    cdsDados.Data := pvDados;
+    cdsDados.Data := Dados;
     cdsDados.First;
     while not cdsDados.Eof do
     begin
 
-      FoFormato.PularLinha;
+      Formato.PularLinha;
       for nContador := 0 to Pred(cdsDados.Fields.Count) do
-        FoFormato.ExportarCampo(cdsDados.Fields[nContador].AsString);
+        Formato.ExportarCampo(cdsDados.Fields[nContador].AsString);
 
       cdsDados.Next;
     end;
-    FoFormato.SalvarArquivo('Clientes');
+    Formato.SalvarArquivo('Clientes');
   finally
     FreeAndNil(cdsDados);
   end;

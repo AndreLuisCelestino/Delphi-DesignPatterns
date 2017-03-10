@@ -4,7 +4,7 @@ interface
 
 type
   IExportador = interface
-    procedure ExportarDados(const pvDados: olevariant);
+    procedure ExportarDados(const Dados: olevariant);
   end;
 
 implementation

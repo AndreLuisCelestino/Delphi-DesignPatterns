@@ -9,9 +9,9 @@ type
   { Concrete Implementor }
   TFormatoXLS = class(TInterfacedObject, IFormato)
   private
-    FnLinha: integer;
-    FnColuna: integer;
-    FoExcel: TExcelApplication;
+    Linha: integer;
+    Coluna: integer;
+    Excel: TExcelApplication;
 
     procedure CriarAplicacaoExcel;
   public
@@ -19,9 +19,9 @@ type
     destructor Destroy; override;
     
     procedure PularLinha;
-    procedure DesenharCabecalho(const psTitulo: string);
-    procedure ExportarCampo(const psValor: string);
-    procedure SalvarArquivo(const psNomeArquivo: string);
+    procedure DesenharCabecalho(const Titulo: string);
+    procedure ExportarCampo(const Valor: string);
+    procedure SalvarArquivo(const NomeArquivo: string);
   end;
 
 implementation
@@ -35,62 +35,62 @@ constructor TFormatoXLS.Create;
 begin
   CriarAplicacaoExcel;
 
-  FnLinha := 1;
-  FnColuna := 1;
+  Linha := 1;
+  Coluna := 1;
 end;
 
 procedure TFormatoXLS.CriarAplicacaoExcel;
 begin
-  FoExcel := TExcelApplication.Create(nil);
-  FoExcel.Connect;
-  FoExcel.WorkBooks.Add(xlWBATWorksheet, 0);
-  FoExcel.Visible[0] := True;
+  Excel := TExcelApplication.Create(nil);
+  Excel.Connect;
+  Excel.WorkBooks.Add(xlWBATWorksheet, 0);
+  Excel.Visible[0] := True;
 end;
 
-procedure TFormatoXLS.DesenharCabecalho(const psTitulo: string);
+procedure TFormatoXLS.DesenharCabecalho(const Titulo: string);
 var
-  sCelula: string;
+  Celula: string;
 begin
-  sCelula:= Chr(64 + FnColuna) + IntToStr(FnLinha);
-  FoExcel.Range[sCelula, sCelula].Font.Bold := True;
-  FoExcel.Range[sCelula, sCelula].Value2 := psTitulo;
-  Inc(FnColuna);
+  Celula:= Chr(64 + Coluna) + IntToStr(Linha);
+  Excel.Range[Celula, Celula].Font.Bold := True;
+  Excel.Range[Celula, Celula].Value2 := Titulo;
+  Inc(Coluna);
 end;
 
 destructor TFormatoXLS.Destroy;
 begin
-  FoExcel.Disconnect;
-  FreeAndNil(FoExcel);
-  
+  Excel.Disconnect;
+  FreeAndNil(Excel);
+
   inherited;
 end;
 
-procedure TFormatoXLS.ExportarCampo(const psValor: string);
+procedure TFormatoXLS.ExportarCampo(const Valor: string);
 var
-  sCelula: string;
+  Celula: string;
 begin
-  sCelula:= Chr(64 + FnColuna) + IntToStr(FnLinha);
-  FoExcel.Range[sCelula, sCelula].Value2 := psValor;
-  Inc(FnColuna);
+  Celula:= Chr(64 + Coluna) + IntToStr(Linha);
+  Excel.Range[Celula, Celula].Value2 := Valor;
+  Inc(Coluna);
 end;
 
 procedure TFormatoXLS.PularLinha;
 begin
-  Inc(FnLinha);
-  FnColuna := 1;
-  FoExcel.Columns.AutoFit;
+  Inc(Linha);
+  Coluna := 1;
+  Excel.Columns.AutoFit;
 end;
 
-procedure TFormatoXLS.SalvarArquivo(const psNomeArquivo: string);
+procedure TFormatoXLS.SalvarArquivo(const NomeArquivo: string);
 var
-  sCaminhoAplicacao: string;
-  sNomeArquivo: string;
+  CaminhoAplicacao: string;
+  NomeCompleto: string;
 begin
-  sCaminhoAplicacao := ExtractFilePath(Application.ExeName);
-  sNomeArquivo := Format('%s%s.xls', [sCaminhoAplicacao, psNomeArquivo]);
-  DeleteFile(PAnsiChar(sNomeArquivo));
-  
-  FoExcel.ActiveWorkbook.SaveAs(sNomeArquivo,
+  CaminhoAplicacao := ExtractFilePath(Application.ExeName);
+  NomeCompleto := Format('%s%s.xls', [CaminhoAplicacao, NomeArquivo]);
+  DeleteFile(PWideChar(NomeArquivo));
+
+  Excel.ActiveWorkbook.SaveAs(NomeCompleto,
       xlNormal, EmptyStr, EmptyStr, False, False, xlNoChange,
       xlUserResolution, False, EmptyParam, EmptyParam, 0, 0);
 end;
