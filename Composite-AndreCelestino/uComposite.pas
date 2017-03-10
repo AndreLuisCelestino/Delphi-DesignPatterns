@@ -3,14 +3,14 @@ unit uComposite;
 interface
 
 uses
-  Classes, uComponent, uLeaf, Contnrs;
+  Classes, uComponent, uLeaf, System.Generics.Collections;
 
 type
   { Composite }
   TPacoteViagem = class(TInterfacedObject, IViagem)
   private
     // lista de objetos para armazenar as viagens (Leaf) do pacote
-    Viagens: TObjectList;
+    Viagens: TObjectList<TViagem>;
   public
     constructor Create;
 
@@ -32,8 +32,7 @@ end;
 
 function TPacoteViagem.CalcularValor: double;
 var
-  nContador: smallint;
-  oViagem: TViagem;
+  Viagem: TViagem;
 begin
   // Este é o método principal (Operation) que dá propósito ao padrão Composite.
   // O método irá ler cada uma das viagens dentro do pacote,
@@ -41,19 +40,16 @@ begin
   // para calcular o valor de cada viagem, e por fim, obter o valor total do pacote
 
   result := 0;
-  for nContador := 0 to Pred(Viagens.Count) do
+  for Viagem in Viagens do
   begin
-    // Aponta a variável "oViagem" para o objeto no índice da lista
-    oViagem := (Viagens[nContador]) as TViagem;
-
     // Chama o Operation do Leaf
-    result := result + oViagem.CalcularValor;
+    result := result + Viagem.CalcularValor;
   end;
 end;
 
 constructor TPacoteViagem.Create;
 begin
-  Viagens := TObjectList.Create;
+  Viagens := TObjectList<TViagem>.Create;
 end;
 
 end.
