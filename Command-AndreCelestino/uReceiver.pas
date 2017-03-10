@@ -55,6 +55,7 @@ var
   ListaProgramas: TStringList;
 begin
   // Método responsável por extrair a lista de programas instalados
+  // Obs: o aplicativo deve ser executado como administrador
 
   Registro := TRegistry.Create;
   ListaChaves := TStringList.Create;
