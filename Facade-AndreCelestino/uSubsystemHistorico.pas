@@ -21,16 +21,16 @@ procedure TSubsystemHistorico.RegistrarHistoricoDoCalculo(const Fidelidade: inte
   const Dolar, Preco, ValorVenda: real);
 var
   Arquivo: TextFile;
-  sPathArquivo: string;
+  PathArquivo: string;
   Desconto: string;
 begin
   // obtém o caminho e nome do arquivo de histórico
-  sPathArquivo := ExtractFilePath(ParamStr(0)) + 'Historico.txt';
+  PathArquivo := ExtractFilePath(ParamStr(0)) + 'Historico.txt';
 
   // associa a variável "Arquivo" com o arquivo "Historico.txt"
-  AssignFile(Arquivo, sPathArquivo);
+  AssignFile(Arquivo, PathArquivo);
 
-  if FileExists(sPathArquivo) then
+  if FileExists(PathArquivo) then
     // se o arquivo já existe, coloca-o em modo de edição
     Append(Arquivo)
   else

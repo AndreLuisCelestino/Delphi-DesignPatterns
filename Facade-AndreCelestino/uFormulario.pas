@@ -23,14 +23,14 @@ type
     ClientDataSetProdutosCodigo: TIntegerField;
     ClientDataSetProdutosProduto: TStringField;
     ClientDataSetProdutosPreco: TFloatField;
-    DBGrid: TDBGrid;
-    Label1: TLabel;
-    DBGrid2: TDBGrid;
-    Label2: TLabel;
+    DBGridClientes: TDBGrid;
+    LabelCliente: TLabel;
+    DBGridProdutos: TDBGrid;
+    LabelProduto: TLabel;
     DataSourceClientes: TDataSource;
     DataSourceProdutos: TDataSource;
     Memo: TMemo;
-    Label3: TLabel;
+    LabelHistorico: TLabel;
     procedure BitBtnCalcularValorDaVendaClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ClientDataSetClientesFidelidadeGetText(Sender: TField;
@@ -43,7 +43,7 @@ var
 implementation
 
 uses
-  uFacade;
+  System.UITypes, uFacade;
 
 {$R *.dfm}
 
@@ -84,17 +84,17 @@ end;
 
 procedure TfFormulario.FormCreate(Sender: TObject);
 var
-  sCaminhoAplicacao: string;
+  CaminhoAplicacao: string;
 begin
   // obtém o caminho do aplicação
-  sCaminhoAplicacao := ExtractFilePath(ParamStr(0));
+  CaminhoAplicacao := ExtractFilePath(ParamStr(0));
 
   // exclui o arquivo de histórico existente
-  DeleteFile(sCaminhoAplicacao + 'Historico.txt');
+  DeleteFile(CaminhoAplicacao + 'Historico.txt');
 
   // carrega os dados de clientes e produtos a partir de arquivos XML
-  ClientDataSetClientes.LoadFromFile(sCaminhoAplicacao + 'Clientes.xml');
-  ClientDataSetProdutos.LoadFromFile(sCaminhoAplicacao + 'Produtos.xml');
+  ClientDataSetClientes.LoadFromFile(CaminhoAplicacao + 'Clientes.xml');
+  ClientDataSetProdutos.LoadFromFile(CaminhoAplicacao + 'Produtos.xml');
 end;
 
 procedure TfFormulario.ClientDataSetClientesFidelidadeGetText(

@@ -17,7 +17,7 @@ object fFormulario: TfFormulario
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
+  object LabelCliente: TLabel
     Left = 8
     Top = 4
     Width = 119
@@ -30,7 +30,7 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
+  object LabelProduto: TLabel
     Left = 352
     Top = 4
     Width = 126
@@ -43,7 +43,7 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
+  object LabelHistorico: TLabel
     Left = 158
     Top = 172
     Width = 359
@@ -64,8 +64,6 @@ object fFormulario: TfFormulario
     Width = 187
     Height = 38
     Caption = 'Calcular Valor de Venda'
-    TabOrder = 0
-    OnClick = BitBtnCalcularValorDaVendaClick
     Glyph.Data = {
       F6060000424DF606000000000000360000002800000018000000180000000100
       180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
@@ -123,8 +121,10 @@ object fFormulario: TfFormulario
       FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
       FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+    TabOrder = 0
+    OnClick = BitBtnCalcularValorDaVendaClick
   end
-  object DBGrid: TDBGrid
+  object DBGridClientes: TDBGrid
     Left = 8
     Top = 20
     Width = 320
@@ -144,14 +144,13 @@ object fFormulario: TfFormulario
         FieldName = 'Codigo'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Width = 60
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Cliente'
         Title.Alignment = taCenter
-        Width = 150
+        Width = 145
         Visible = True
       end
       item
@@ -162,9 +161,9 @@ object fFormulario: TfFormulario
         Visible = True
       end>
   end
-  object DBGrid2: TDBGrid
-    Left = 352
-    Top = 20
+  object DBGridProdutos: TDBGrid
+    Left = 353
+    Top = 23
     Width = 320
     Height = 93
     DataSource = DataSourceProdutos
@@ -182,14 +181,13 @@ object fFormulario: TfFormulario
         FieldName = 'Codigo'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Width = 60
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Produto'
         Title.Alignment = taCenter
-        Width = 150
+        Width = 145
         Visible = True
       end
       item
@@ -217,15 +215,15 @@ object fFormulario: TfFormulario
     TabOrder = 3
   end
   object ClientDataSetClientes: TClientDataSet
-    Active = True
-    Aggregates = <>
-    Params = <>
-    Left = 12
-    Top = 81
-    Data = {
+    PersistDataPacket.Data = {
       580000009619E0BD010000001800000003000000000003000000580006436F64
       69676F040001000000000007436C69656E746501004900000001000557494454
       480200020032000A466964656C696461646502000100000000000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 52
+    Top = 65
     object ClientDataSetClientesCodigo: TIntegerField
       FieldName = 'Codigo'
     end
@@ -239,15 +237,15 @@ object fFormulario: TfFormulario
     end
   end
   object ClientDataSetProdutos: TClientDataSet
-    Active = True
-    Aggregates = <>
-    Params = <>
-    Left = 356
-    Top = 82
-    Data = {
+    PersistDataPacket.Data = {
       530000009619E0BD010000001800000003000000000003000000530006436F64
       69676F04000100000000000750726F6475746F01004900000001000557494454
       4802000200320005507265636F08000400000000000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 404
+    Top = 66
     object ClientDataSetProdutosCodigo: TIntegerField
       FieldName = 'Codigo'
     end
@@ -263,12 +261,12 @@ object fFormulario: TfFormulario
   end
   object DataSourceClientes: TDataSource
     DataSet = ClientDataSetClientes
-    Left = 43
-    Top = 81
+    Left = 163
+    Top = 65
   end
   object DataSourceProdutos: TDataSource
     DataSet = ClientDataSetProdutos
-    Left = 388
-    Top = 82
+    Left = 516
+    Top = 66
   end
 end
