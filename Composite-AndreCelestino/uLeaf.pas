@@ -9,11 +9,11 @@ type
   { Leaf }
   TViagem = class(TInterfacedObject, IViagem)
   private
-    FsOrigem: string;
-    FsDestino: string;
+    Origem: string;
+    Destino: string;
   public
-    procedure DefinirOrigem(const psCidade: string);
-    procedure DefinirDestino(const psCidade: string);
+    procedure DefinirOrigem(const Cidade: string);
+    procedure DefinirDestino(const Cidade: string);
 
     { Operation }
     function CalcularValor: double;
@@ -28,21 +28,21 @@ uses
 
 function TViagem.CalcularValor: double;
 var
-  oValoresSingleton: TValoresSingleton;
+  ValoresSingleton: TValoresSingleton;
 begin
   // Obtém a instância do Singleton para consultar o valor da viagem
-  oValoresSingleton := TValoresSingleton.ObterInstancia;
-  result := oValoresSingleton.ConsultarValorViagem(FsOrigem, FsDestino);
+  ValoresSingleton := TValoresSingleton.ObterInstancia;
+  result := ValoresSingleton.ConsultarValorViagem(Origem, Destino);
 end;
 
-procedure TViagem.DefinirDestino(const psCidade: string);
+procedure TViagem.DefinirDestino(const Cidade: string);
 begin
-  FsDestino := psCidade;
+  Destino := Cidade;
 end;
 
-procedure TViagem.DefinirOrigem(const psCidade: string);
+procedure TViagem.DefinirOrigem(const Cidade: string);
 begin
-  FsOrigem := psCidade;
+  Origem := Cidade;
 end;
 
 end.

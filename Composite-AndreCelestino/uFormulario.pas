@@ -23,7 +23,7 @@ type
     procedure BitBtnCalcularClick(Sender: TObject);
     procedure ComboBoxOrigemChange(Sender: TObject);
   private
-    FoPacoteViagem: TPacoteViagem;
+    PacoteViagem: TPacoteViagem;
   end;
 
 var
@@ -32,28 +32,28 @@ var
 implementation
 
 uses
-  uComponent, uLeaf, uValoresSingleton;
+  System.UITypes, uComponent, uLeaf, uValoresSingleton;
 
 {$R *.dfm}
 
 procedure TfFormulario.FormCreate(Sender: TObject);
 begin
   // Instancia o Composite
-  FoPacoteViagem := TPacoteViagem.Create;
+  PacoteViagem := TPacoteViagem.Create;
 end;
 
 procedure TfFormulario.BitBtnAdicionarViagemClick(Sender: TObject);
 var
-  oViagem: TViagem;
+  Viagem: TViagem;
 begin
   MemoViagens.Lines.Add(Format('%s -> %s',
     [ComboBoxOrigem.Text, ComboBoxDestino.Text]));
 
   // Cria um Leaf (viagem) e adiciona no pacote de viagem (Composite)
-  oViagem := TViagem.Create;
-  oViagem.DefinirOrigem(ComboBoxOrigem.Text);
-  oViagem.DefinirDestino(ComboBoxDestino.Text);
-  FoPacoteViagem.AdicionarViagem(oViagem);
+  Viagem := TViagem.Create;
+  Viagem.DefinirOrigem(ComboBoxOrigem.Text);
+  Viagem.DefinirDestino(ComboBoxDestino.Text);
+  PacoteViagem.AdicionarViagem(Viagem);
 
   ComboBoxOrigem.ItemIndex := ComboBoxOrigem.Items.IndexOf(ComboBoxDestino.Text);
   ComboBoxDestino.ItemIndex := -1;
@@ -67,7 +67,7 @@ begin
     'para calcular o valor de cada viagem e, no final, obter a soma total.',
     mtInformation, [mbOK], 0);
 
-  EditTotal.Text :=   FormatFloat('###,##0.00', FoPacoteViagem.CalcularValor);
+  EditTotal.Text :=   FormatFloat('###,##0.00', PacoteViagem.CalcularValor);
 end;
 
 procedure TfFormulario.ComboBoxOrigemChange(Sender: TObject);

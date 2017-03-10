@@ -76,7 +76,6 @@ object fFormulario: TfFormulario
       Height = 21
       Style = csDropDownList
       DropDownCount = 10
-      ItemHeight = 13
       TabOrder = 0
       OnChange = ComboBoxOrigemChange
       Items.Strings = (
@@ -97,7 +96,6 @@ object fFormulario: TfFormulario
       Height = 21
       Style = csDropDownList
       DropDownCount = 10
-      ItemHeight = 13
       TabOrder = 1
       Items.Strings = (
         'S'#227'o Paulo'

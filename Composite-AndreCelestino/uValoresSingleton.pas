@@ -13,14 +13,14 @@ type
 
   TValoresSingleton = class
   private
-    FoDataSet: TClientDataSet;
+    DataSet: TClientDataSet;
 
     constructor Create;
   public
     destructor Destroy; override;
     class function ObterInstancia: TValoresSingleton;
     class function NewInstance: TObject; override;
-    function ConsultarValorViagem(const psOrigem, psDestino: string): double;
+    function ConsultarValorViagem(const Origem, Destino: string): double;
   end;
 
 implementation
@@ -33,26 +33,26 @@ var
 
 { TValoresSingleton }
 
-function TValoresSingleton.ConsultarValorViagem(const psOrigem,
-  psDestino: string): double;
+function TValoresSingleton.ConsultarValorViagem(const Origem,
+  Destino: string): double;
 begin
   // Localiza o valor da viagem conforme origem e destino informados
-  FoDataSet.Locate('Origem;Destino', VarArrayOf([psOrigem, psDestino]), []);
+  DataSet.Locate('Origem;Destino', VarArrayOf([Origem, Destino]), []);
 
-  result := FoDataSet.FieldByName('Valor').AsFloat;
+  result := DataSet.FieldByName('Valor').AsFloat;
 end;
 
 constructor TValoresSingleton.Create;
 begin
-  FoDataSet := TClientDataSet.Create(nil);
+  DataSet := TClientDataSet.Create(nil);
 
   // Carrega os dados que estão armazendos no XML
-  FoDataSet.LoadFromFile(ExtractFilePath(Application.ExeName) + 'TarifaViagens.xml');
+  DataSet.LoadFromFile(ExtractFilePath(Application.ExeName) + 'TarifaViagens.xml');
 end;
 
 destructor TValoresSingleton.Destroy;
 begin
-  FreeAndNil(FoDataSet);
+  FreeAndNil(DataSet);
   inherited;
 end;
 
@@ -60,7 +60,7 @@ class function TValoresSingleton.NewInstance: TObject;
 begin
   if not Assigned(Instancia) then
     Instancia := TValoresSingleton(inherited NewInstance);
- 
+
   result := Instancia;
 end;
 
