@@ -6,7 +6,7 @@ type
   TLoggerSingleton = class
   private
     // variável que aponta para o arquivo de log
-    FArquivoLog: TextFile;
+    ArquivoLog: TextFile;
 
     // o construtor é declarado como privado
     // para evitar que seja chamado por outras classes
@@ -18,7 +18,7 @@ type
     class function NewInstance: TObject; override;
 
     // método para registrar o texto do parâmetro no arquivo de log
-    procedure RegistrarLog(const psTexto: string);
+    procedure RegistrarLog(const Texto: string);
 
     destructor Destroy; override;
   end;
@@ -35,17 +35,17 @@ uses
 
 constructor TLoggerSingleton.Create;
 var
-  sDiretorioAplicacao: string;
+  DiretorioAplicacao: string;
 begin
   // associa o aquivo "Log.txt" que está na pasta do projeto
-  sDiretorioAplicacao := ExtractFilePath(Application.ExeName);
-  AssignFile(FArquivoLog, sDiretorioAplicacao + 'Log.txt');
+  DiretorioAplicacao := ExtractFilePath(Application.ExeName);
+  AssignFile(ArquivoLog, DiretorioAplicacao + 'Log.txt');
 
   // se o arquivo não existir, é criado
-  if not FileExists(sDiretorioAplicacao + 'Log.txt') then
+  if not FileExists(DiretorioAplicacao + 'Log.txt') then
   begin
-    Rewrite(FArquivoLog);
-    CloseFile(FArquivoLog);
+    Rewrite(ArquivoLog);
+    CloseFile(ArquivoLog);
   end;
 end;
 
@@ -77,19 +77,19 @@ begin
   result := TLoggerSingleton.Create;
 end;
 
-procedure TLoggerSingleton.RegistrarLog(const psTexto: string);
+procedure TLoggerSingleton.RegistrarLog(const Texto: string);
 var
   sDataHora: string;
 begin
   // abre o arquivo de log para edição
-  Append(FArquivoLog);
+  Append(ArquivoLog);
 
   // escreve a data, hora e texto no arquivo de log
   sDataHora := FormatDateTime('[dd/mm/yyyy hh:nn:ss] ', Now);
-  WriteLn(FArquivoLog, sDataHora + psTexto);
+  WriteLn(ArquivoLog, sDataHora + Texto);
 
   // fecha o arquivo
-  CloseFile(FArquivoLog);
+  CloseFile(ArquivoLog);
 end;
 
 end.

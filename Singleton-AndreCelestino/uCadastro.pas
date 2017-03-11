@@ -12,12 +12,12 @@ type
     ClientDataSetCodigo: TIntegerField;
     ClientDataSetNome: TStringField;
     DBGrid: TDBGrid;
-    btnInserir: TSpeedButton;
-    btnRemover: TSpeedButton;
+    SpeedButtonInserir: TSpeedButton;
+    SpeedButtonRemover: TSpeedButton;
     DataSource: TDataSource;
-    procedure btnInserirClick(Sender: TObject);
+    procedure SpeedButtonInserirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure btnRemoverClick(Sender: TObject);
+    procedure SpeedButtonRemoverClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ClientDataSetAfterPost(DataSet: TDataSet);
     procedure FormShow(Sender: TObject);
@@ -35,17 +35,17 @@ uses
 
 {$R *.dfm}
 
-procedure TfCadastro.btnInserirClick(Sender: TObject);
+procedure TfCadastro.SpeedButtonInserirClick(Sender: TObject);
 var
-  nProximoCodigo: integer;
+  ProximoCodigo: integer;
 begin
   // obtém o próximo código do DataSet
   ClientDataSet.Last;
-  nProximoCodigo := ClientDataSet.FieldByName('Codigo').AsInteger + 1;
+  ProximoCodigo := ClientDataSet.FieldByName('Codigo').AsInteger + 1;
 
   // coloca o DataSet em modo de inserção e atribui o código ao novo registro
   ClientDataSet.Append;
-  ClientDataSet.FieldByName('Codigo').AsInteger := nProximoCodigo;
+  ClientDataSet.FieldByName('Codigo').AsInteger := ProximoCodigo;
 
   // coloca o foco na segunda coluna da DBGrid
   DBGrid.SetFocus;
@@ -54,21 +54,19 @@ end;
 
 procedure TfCadastro.FormCreate(Sender: TObject);
 var
-  sDiretorioAplicacao: string;
+  DiretorioAplicacao: string;
 begin
-  sDiretorioAplicacao := ExtractFilePath(Application.ExeName);
+  DiretorioAplicacao := ExtractFilePath(Application.ExeName);
 
-  if not FileExists(sDiretorioAplicacao + 'Participantes.xml') then
-  begin
+  if not FileExists(DiretorioAplicacao + 'Participantes.xml') then
     Exit;
-  end;
 
   // carrega os dados dos participantes a partir de um XML
-  ClientDataSet.LoadFromFile(sDiretorioAplicacao + 'Participantes.xml');
+  ClientDataSet.LoadFromFile(DiretorioAplicacao + 'Participantes.xml');
   ClientDataSet.LogChanges := False;
 end;
 
-procedure TfCadastro.btnRemoverClick(Sender: TObject);
+procedure TfCadastro.SpeedButtonRemoverClick(Sender: TObject);
 begin
   // exclui o registro selecionado
   ClientDataSet.Delete;
@@ -76,48 +74,48 @@ end;
 
 procedure TfCadastro.FormClose(Sender: TObject; var Action: TCloseAction);
 var
-  sDiretorioAplicacao: string;
+  DiretorioAplicacao: string;
 begin
   // salva os dados dos participantes para um arquivo XML
-  sDiretorioAplicacao := ExtractFilePath(Application.ExeName);
-  ClientDataSet.SaveToFile(sDiretorioAplicacao + 'Participantes.xml');
+  DiretorioAplicacao := ExtractFilePath(Application.ExeName);
+  ClientDataSet.SaveToFile(DiretorioAplicacao + 'Participantes.xml');
 end;
 
 procedure TfCadastro.ClientDataSetAfterPost(
   DataSet: TDataSet);
 var
-  oLogger: TLoggerSingleton;
-  sTexto: string;
+  Logger: TLoggerSingleton;
+  Texto: string;
 begin
-  sTexto := Format('Participante "%s" cadastrado.',
+  Texto := Format('Participante "%s" cadastrado.',
     [ClientDataSet.FieldByName('Nome').AsString]);
 
   // obtém a instância do Singleton para registrar um log
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog(sTexto);
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog(Texto);
 end;
 
 procedure TfCadastro.FormShow(Sender: TObject);
 var
-  oLogger: TLoggerSingleton;
+  Logger: TLoggerSingleton;
 begin
   // obtém a instância do Singleton para registrar um log
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog('Usuário abriu a tela de Cadastro de Participantes.');
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog('Usuário abriu a tela de Cadastro de Participantes.');
 end;
 
 procedure TfCadastro.ClientDataSetBeforeDelete(
   DataSet: TDataSet);
 var
-  oLogger: TLoggerSingleton;
-  sTexto: string;
+  Logger: TLoggerSingleton;
+  Texto: string;
 begin
-  sTexto := Format('Participante "%s" removido.',
+  Texto := Format('Participante "%s" removido.',
     [ClientDataSet.FieldByName('Nome').AsString]);
 
   // obtém a instância do Singleton para registrar um log    
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog(sTexto);
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog(Texto);
 end;
 
 procedure TfCadastro.ClientDataSetBeforePost(DataSet: TDataSet);

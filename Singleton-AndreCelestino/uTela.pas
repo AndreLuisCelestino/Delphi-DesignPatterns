@@ -1,5 +1,10 @@
 unit uTela;
 
+{
+  Exemplo de Singleton com Delphi
+  Criado por André Luis Celestino: www.andrecelestino.com
+}
+
 interface
 
 uses
@@ -8,14 +13,14 @@ uses
 
 type
   TfTela = class(TForm)
-    btnCadastrarParticipantes: TBitBtn;
-    btnRealizarSorteio: TBitBtn;
+    BitBtnCadastrarParticipantes: TBitBtn;
+    BitBtnRealizarSorteio: TBitBtn;
     Bevel: TBevel;
-    btnAbrirLog: TBitBtn;
-    procedure btnAbrirLogClick(Sender: TObject);
+    BitBtnAbrirLog: TBitBtn;
+    procedure BitBtnAbrirLogClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure btnCadastrarParticipantesClick(Sender: TObject);
-    procedure btnRealizarSorteioClick(Sender: TObject);
+    procedure BitBtnCadastrarParticipantesClick(Sender: TObject);
+    procedure BitBtnRealizarSorteioClick(Sender: TObject);
   end;
 
 var
@@ -28,25 +33,25 @@ uses
 
 {$R *.dfm}
 
-procedure TfTela.btnAbrirLogClick(Sender: TObject);
+procedure TfTela.BitBtnAbrirLogClick(Sender: TObject);
 var
-  sDiretorioAplicacao: string;
+  DiretorioAplicacao: string;
 begin
   // abre o arquivo de log gerado pelo Singleton (Logger)
-  sDiretorioAplicacao := ExtractFilePath(Application.ExeName);
-  ShellExecute(Handle, 'open', PAnsiChar(sDiretorioAplicacao + 'Log.txt'), nil, nil, SW_SHOWNORMAL); 
+  DiretorioAplicacao := ExtractFilePath(Application.ExeName);
+  ShellExecute(Handle, 'open', PWideChar(DiretorioAplicacao + 'Log.txt'), nil, nil, SW_SHOWNORMAL);
 end;
 
 procedure TfTela.FormShow(Sender: TObject);
 var
-  oLogger: TLoggerSingleton;
+  Logger: TLoggerSingleton;
 begin
   // obtém a instância do Singleton para registrar um log
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog('Usuário iniciou a aplicação.');
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog('Usuário iniciou a aplicação.');
 end;
 
-procedure TfTela.btnCadastrarParticipantesClick(Sender: TObject);
+procedure TfTela.BitBtnCadastrarParticipantesClick(Sender: TObject);
 var
   fCadastro: TfCadastro;
 begin
@@ -56,7 +61,7 @@ begin
   FreeAndNil(fCadastro);
 end;
 
-procedure TfTela.btnRealizarSorteioClick(Sender: TObject);
+procedure TfTela.BitBtnRealizarSorteioClick(Sender: TObject);
 var
   fSorteio: TfSorteio;
 begin

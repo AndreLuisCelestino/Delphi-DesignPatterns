@@ -19,7 +19,7 @@ object fCadastro: TfCadastro
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object btnInserir: TSpeedButton
+  object SpeedButtonInserir: TSpeedButton
     Left = 333
     Top = 8
     Width = 33
@@ -84,9 +84,9 @@ object fCadastro: TfCadastro
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     ParentShowHint = False
     ShowHint = True
-    OnClick = btnInserirClick
+    OnClick = SpeedButtonInserirClick
   end
-  object btnRemover: TSpeedButton
+  object SpeedButtonRemover: TSpeedButton
     Left = 333
     Top = 48
     Width = 33
@@ -151,7 +151,7 @@ object fCadastro: TfCadastro
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     ParentShowHint = False
     ShowHint = True
-    OnClick = btnRemoverClick
+    OnClick = SpeedButtonRemoverClick
   end
   object DBGrid: TDBGrid
     Left = 8
@@ -180,18 +180,18 @@ object fCadastro: TfCadastro
       end>
   end
   object ClientDataSet: TClientDataSet
+    PersistDataPacket.Data = {
+      420000009619E0BD010000001800000002000000000003000000420006436F64
+      69676F0400010000000000044E6F6D6501004900000001000557494454480200
+      020028000000}
     Active = True
     Aggregates = <>
     Params = <>
     BeforePost = ClientDataSetBeforePost
     AfterPost = ClientDataSetAfterPost
     BeforeDelete = ClientDataSetBeforeDelete
-    Left = 291
-    Top = 360
-    Data = {
-      420000009619E0BD010000001800000002000000000003000000420006436F64
-      69676F0400010000000000044E6F6D6501004900000001000557494454480200
-      020028000000}
+    Left = 43
+    Top = 336
     object ClientDataSetCodigo: TIntegerField
       FieldName = 'Codigo'
     end
@@ -202,7 +202,7 @@ object fCadastro: TfCadastro
   end
   object DataSource: TDataSource
     DataSet = ClientDataSet
-    Left = 259
-    Top = 360
+    Left = 131
+    Top = 336
   end
 end

@@ -17,30 +17,30 @@ object fSorteio: TfSorteio
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lbParticipantes: TLabel
+  object LabelParticipantes: TLabel
     Left = 8
     Top = 8
     Width = 66
     Height = 13
     Caption = 'Participantes:'
   end
-  object lbSorteado: TLabel
+  object LabelSorteado: TLabel
     Left = 8
     Top = 264
     Width = 48
     Height = 13
     Caption = 'Sorteado:'
   end
-  object btnSortear: TBitBtn
+  object BitBtnSortear: TBitBtn
     Left = 80
     Top = 224
     Width = 130
     Height = 33
     Caption = 'Sortear!'
     TabOrder = 0
-    OnClick = btnSortearClick
+    OnClick = BitBtnSortearClick
   end
-  object edtSorteado: TEdit
+  object EditSorteado: TEdit
     Left = 8
     Top = 280
     Width = 273
@@ -58,7 +58,7 @@ object fSorteio: TfSorteio
   object ClientDataSet: TClientDataSet
     Aggregates = <>
     Params = <>
-    Left = 248
-    Top = 184
+    Left = 128
+    Top = 96
   end
 end

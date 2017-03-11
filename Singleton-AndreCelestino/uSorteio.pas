@@ -8,14 +8,14 @@ uses
 
 type
   TfSorteio = class(TForm)
-    lbParticipantes: TLabel;
-    btnSortear: TBitBtn;
-    lbSorteado: TLabel;
-    edtSorteado: TEdit;
+    LabelParticipantes: TLabel;
+    BitBtnSortear: TBitBtn;
+    LabelSorteado: TLabel;
+    EditSorteado: TEdit;
     ClientDataSet: TClientDataSet;
     ListBox: TListBox;
     procedure FormShow(Sender: TObject);
-    procedure btnSortearClick(Sender: TObject);
+    procedure BitBtnSortearClick(Sender: TObject);
   private
     procedure PreencherParticipantes;
   end;
@@ -32,28 +32,26 @@ uses
 
 procedure TfSorteio.FormShow(Sender: TObject);
 var
-  oLogger: TLoggerSingleton;
+  Logger: TLoggerSingleton;
 begin
   // obtém a instância do Singleton para registrar um log
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog('Usuário abriu a tela de Sorteio.');
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog('Usuário abriu a tela de Sorteio.');
 
   PreencherParticipantes;
 end;
 
 procedure TfSorteio.PreencherParticipantes;
 var
-  sDiretorioAplicacao: string;
+  DiretorioAplicacao: string;
 begin
-  sDiretorioAplicacao := ExtractFilePath(Application.ExeName);
+  DiretorioAplicacao := ExtractFilePath(Application.ExeName);
 
-  if not FileExists(sDiretorioAplicacao + 'Participantes.xml') then
-  begin
+  if not FileExists(DiretorioAplicacao + 'Participantes.xml') then
     Exit;
-  end;
 
   // carrega os dados dos participantes a partir de um XML
-  ClientDataSet.LoadFromFile(sDiretorioAplicacao + 'Participantes.xml');
+  ClientDataSet.LoadFromFile(DiretorioAplicacao + 'Participantes.xml');
   ClientDataSet.First;
 
   // adiciona cada participante na ListBox
@@ -64,22 +62,22 @@ begin
   end;
 end;
 
-procedure TfSorteio.btnSortearClick(Sender: TObject);
+procedure TfSorteio.BitBtnSortearClick(Sender: TObject);
 var
-  nSorteado: smallint;
-  oLogger: TLoggerSingleton;
+  Sorteado: smallint;
+  Logger: TLoggerSingleton;
 begin
   // "embaralha" os números
   Randomize;
 
   // sorteia um número entre os índices da ListBox
-  nSorteado := Random(Pred(ListBox.Items.Count));
-  ListBox.ItemIndex := nSorteado;
-  edtSorteado.Text := ListBox.Items[nSorteado];
+  Sorteado := Random(Pred(ListBox.Items.Count));
+  ListBox.ItemIndex := Sorteado;
+  EditSorteado.Text := ListBox.Items[Sorteado];
 
   // obtém a instância do Singleton para registrar um log
-  oLogger := TLoggerSingleton.ObterInstancia;
-  oLogger.RegistrarLog('Participante sorteado: ' + ListBox.Items[nSorteado]);
+  Logger := TLoggerSingleton.ObterInstancia;
+  Logger.RegistrarLog('Participante sorteado: ' + ListBox.Items[Sorteado]);
 end;
 
 end.
