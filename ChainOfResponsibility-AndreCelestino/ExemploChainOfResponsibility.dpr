@@ -11,7 +11,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.Title := 'Chain of Responsibility';
+  Application.Title := 'Exemplo de Chain of Responsibility';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
