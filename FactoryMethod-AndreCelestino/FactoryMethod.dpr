@@ -11,6 +11,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Factory Method';
   Application.CreateForm(TfTela, fTela);
   Application.Run;
 end.
