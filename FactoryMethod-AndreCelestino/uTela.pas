@@ -1,5 +1,10 @@
 unit uTela;
 
+{
+  Exemplo de Chain of Factory Method com Delphi
+  Criado por André Luis Celestino: www.andrecelestino.com
+}
+
 interface
 
 uses
@@ -8,17 +13,17 @@ uses
 
 type
   TfTela = class(TForm)
-    cmbPrazoPagamento: TComboBox;
-    edtValor: TEdit;
-    lbValor: TLabel;
-    lbPrazoPagamento: TLabel;
-    btnGerarProjecao: TBitBtn;
+    ComboBoxPrazoPagamento: TComboBox;
+    EditValor: TEdit;
+    LabelValor: TLabel;
+    LabelPrazoPagamento: TLabel;
+    BitBtnGerarProjecao: TBitBtn;
     Memo: TMemo;
-    lbQtdeParcelas: TLabel;
-    edtQtdeParcelas: TEdit;
-    procedure btnGerarProjecaoClick(Sender: TObject);
-    procedure edtValorKeyPress(Sender: TObject; var Key: Char);
-    procedure edtQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
+    LabelQtdeParcelas: TLabel;
+    EditQtdeParcelas: TEdit;
+    procedure BitBtnGerarProjecaoClick(Sender: TObject);
+    procedure EditValorKeyPress(Sender: TObject; var Key: Char);
+    procedure EditQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
   end;
 
 var
@@ -27,56 +32,52 @@ var
 implementation
 
 uses
-  uInterfaces, uFabricaPrazos;
+  System.UITypes, uInterfaces, uFabricaPrazos;
 
 {$R *.dfm}
 
-procedure TfTela.btnGerarProjecaoClick(Sender: TObject);
+procedure TfTela.BitBtnGerarProjecaoClick(Sender: TObject);
 var
   FabricaPrazos: IFactoryMethod;
   TipoPrazo: ITipoPrazo;
-  nValor: real;
-  nQtdeParcelas: integer;
+  Valor: real;
+  QtdeParcelas: integer;
 begin
   // valida se o tipo de prazo foi informado
-  if cmbPrazoPagamento.ItemIndex < 0 then
+  if ComboBoxPrazoPagamento.ItemIndex < 0 then
   begin
     MessageDlg('Selecione o prazo de pagamento.', mtInformation, [mbOK], 0);
-    cmbPrazoPagamento.DroppedDown := True;
+    ComboBoxPrazoPagamento.DroppedDown := True;
     Exit;
   end;
 
   // cria a fábrica (Factory Method)
   FabricaPrazos := TFabricaPrazos.Create;
   // retorna um objeto de tipo de prazo de acordo com o tipo de prazo
-  TipoPrazo := FabricaPrazos.ConsultarPrazo(cmbPrazoPagamento.Text);
+  TipoPrazo := FabricaPrazos.ConsultarPrazo(ComboBoxPrazoPagamento.Text);
 
   // alimenta as variáveis
-  nValor := StrToFloatDef(edtValor.Text, 0);
-  nQtdeParcelas := StrToIntDef(edtQtdeParcelas.Text, 0);
+  Valor := StrToFloatDef(EditValor.Text, 0);
+  QtdeParcelas := StrToIntDef(EditQtdeParcelas.Text, 0);
 
   // consulta o conteúdo do tipo de prazo retornado pela fábrica
   Memo.Lines.Clear;
   Memo.Lines.Add(TipoPrazo.ConsultarDescricao);
   Memo.Lines.Add(TipoPrazo.ConsultarJuros);
-  Memo.Lines.Add(TipoPrazo.ConsultarProjecao(nValor, nQtdeParcelas));
+  Memo.Lines.Add(TipoPrazo.ConsultarProjecao(Valor, QtdeParcelas));
   Memo.Lines.Add(TipoPrazo.ConsultarTotal);
 end;
 
-procedure TfTela.edtValorKeyPress(Sender: TObject; var Key: Char);
+procedure TfTela.EditValorKeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (Key in [#8, #44, '0'..'9']) then
-  begin
+  if not (CharInSet(Key, ['0'..'9', #8, #44])) then
     Key := #0;
-  end;
 end;
 
-procedure TfTela.edtQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
+procedure TfTela.EditQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (Key in [#8, '0'..'9']) then
-  begin
+  if not (CharInSet(Key, ['0'..'9', #8])) then
     Key := #0;
-  end;
 end;
 
 end.

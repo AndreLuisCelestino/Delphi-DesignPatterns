@@ -6,12 +6,12 @@ type
   ITipoPrazo = interface
     function ConsultarDescricao: string;
     function ConsultarJuros: string;
-    function ConsultarProjecao(const pnValor: real; const pnQtdeParcelas: integer): string;
+    function ConsultarProjecao(const Valor: real; const QtdeParcelas: integer): string;
     function ConsultarTotal: string;
   end;
 
   IFactoryMethod = interface
-    function ConsultarPrazo(const psPrazo: string): ITipoPrazo;
+    function ConsultarPrazo(const Prazo: string): ITipoPrazo;
   end;
 
 implementation

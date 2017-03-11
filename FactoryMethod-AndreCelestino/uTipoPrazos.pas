@@ -10,16 +10,16 @@ type
   // e servirá como classe base para os tipos de prazos
   TTipoPrazo = class(TInterfacedObject, ITipoPrazo)
   protected
-    FnValorTotal: real;
+    ValorTotal: real;
 
-    function GerarProjecao(const pnValor, pnJuros: real;
-      const pnQtdeParcelas, pnIntervalo: smallint): string;
+    function GerarProjecao(const Valor, Juros: real;
+      const QtdeParcelas, Intervalo: smallint): string;
     function ConsultarTotal: string;
   public
     function ConsultarDescricao: string; virtual; abstract;
     function ConsultarJuros: string; virtual; abstract;
-    function ConsultarProjecao(const pnValor: real;
-      const pnQtdeParcelas: integer): string; virtual; abstract;
+    function ConsultarProjecao(const Valor: real;
+      const QtdeParcelas: integer): string; virtual; abstract;
   end;
 
   // classe referente ao tipo de prazo mensal
@@ -27,8 +27,8 @@ type
   public
     function ConsultarDescricao: string; override;
     function ConsultarJuros: string; override;
-    function ConsultarProjecao(const pnValor: real;
-      const pnQtdeParcelas: integer): string; override;
+    function ConsultarProjecao(const Valor: real;
+      const QtdeParcelas: integer): string; override;
   end;
 
   // classe referente ao tipo de prazo semestral
@@ -36,8 +36,8 @@ type
   public
     function ConsultarDescricao: string; override;
     function ConsultarJuros: string; override;
-    function ConsultarProjecao(const pnValor: real;
-      const pnQtdeParcelas: integer): string; override;
+    function ConsultarProjecao(const Valor: real;
+      const QtdeParcelas: integer): string; override;
   end;
 
   // classe referente ao tipo de prazo anual
@@ -45,8 +45,8 @@ type
   public
     function ConsultarDescricao: string; override;
     function ConsultarJuros: string; override;
-    function ConsultarProjecao(const pnValor: real;
-      const pnQtdeParcelas: integer): string; override;
+    function ConsultarProjecao(const Valor: real;
+      const QtdeParcelas: integer): string; override;
   end;
 
 implementation
@@ -56,51 +56,51 @@ uses
 
 { TPrazo }
 
-function TTipoPrazo.GerarProjecao(const pnValor, pnJuros: real;
-  const pnQtdeParcelas, pnIntervalo: smallint): string;
+function TTipoPrazo.GerarProjecao(const Valor, Juros: real;
+  const QtdeParcelas, Intervalo: smallint): string;
 var
   // TStringList para armazenar os dados das parcelas
-  slProjecao: TStringList;
+  Projecao: TStringList;
   // contador do número de parcelas
   nContador: smallint;
   // variável para armazenar o valor ajustado conforme os juros
-  nValorAjustado: real;
+  ValorAjustado: real;
   // variável para armazenar o valor com formatação de casas decimais
-  sValorFormatado: string;
+  ValorFormatado: string;
   // variável referente à data da parcela
-  sDataParcela: string;
+  DataParcela: string;
 begin
   // acumulador do valor de parcelas
-  FnValorTotal := 0;
+  ValorTotal := 0;
 
-  nValorAjustado := pnValor;
-  sDataParcela := DateToStr(Date);
-  slProjecao := TStringList.Create;
+  ValorAjustado := Valor;
+  DataParcela := DateToStr(Date);
+  Projecao := TStringList.Create;
   try
-    for nContador := 1 to pnQtdeParcelas do
+    for nContador := 1 to QtdeParcelas do
     begin
       // calcula o valor
-      nValorAjustado := nValorAjustado + (pnValor * pnJuros);
+      ValorAjustado := ValorAjustado + (Valor * Juros);
       // soma o valor na variável acumuladora
-      FnValorTotal := FnValorTotal + nValorAjustado;
+      ValorTotal := ValorTotal + ValorAjustado;
       // formata o valor calculado
-      sValorFormatado := FormatFloat('###,##0.00', nValorAjustado);
+      ValorFormatado := FormatFloat('###,##0.00', ValorAjustado);
       // incrementa a data conforme o tipo de prazo (1, 6 ou 12)
-      sDataParcela := FormatDateTime('dd/mm/yyyy', IncMonth(StrToDate(sDataParcela), pnIntervalo));
+      DataParcela := FormatDateTime('dd/mm/yyyy', IncMonth(StrToDate(DataParcela), Intervalo));
 
       // adiciona os dados da parcela na TStringList
-      slProjecao.Add(Format('Parcela %.2d (%s): %s', [nContador, sDataParcela, sValorFormatado]));
+      Projecao.Add(Format('Parcela %.2d (%s): %s', [nContador, DataParcela, ValorFormatado]));
     end;
     // retorna o conteúdo da TStringList
-    result := slProjecao.Text;
+    result := Projecao.Text;
   finally
-    FreeAndNil(slProjecao);
+    FreeAndNil(Projecao);
   end;
 end;
 
 function TTipoPrazo.ConsultarTotal: string;
 begin
-  result := 'Total: ' + FormatFloat('###,##0.00', FnValorTotal);
+  result := 'Total: ' + FormatFloat('###,##0.00', ValorTotal);
 end;
 
 { TPrazoMensal }
@@ -115,12 +115,12 @@ begin
   result := 'Juros de 3,1% simples ao mês' + sLineBreak;
 end;
 
-function TPrazoMensal.ConsultarProjecao(const pnValor: real;
-  const pnQtdeParcelas: integer): string;
+function TPrazoMensal.ConsultarProjecao(const Valor: real;
+  const QtdeParcelas: integer): string;
 begin
   // chama o método da classe base,
   // informando o percentual de 3,1% e intervalo de 1 mês
-  result := GerarProjecao(pnValor, 0.031, pnQtdeParcelas, 1);
+  result := GerarProjecao(Valor, 0.031, QtdeParcelas, 1);
 end;
 
 { TPrazoSemestral }
@@ -135,12 +135,12 @@ begin
   result := 'Juros de 5,8% simples ao semestre' + sLineBreak;
 end;
 
-function TPrazoSemestral.ConsultarProjecao(const pnValor: real;
-  const pnQtdeParcelas: integer): string;
+function TPrazoSemestral.ConsultarProjecao(const Valor: real;
+  const QtdeParcelas: integer): string;
 begin
   // chama o método da classe base,
   // informando o percentual de 5,8% e intervalo de 6 meses
-  result := GerarProjecao(pnValor, 0.058, pnQtdeParcelas, 6);
+  result := GerarProjecao(Valor, 0.058, QtdeParcelas, 6);
 end;
 
 { TPrazoAnual }
@@ -155,12 +155,12 @@ begin
   result := 'Juros de 10,5% simples ao ano' + sLineBreak;
 end;
 
-function TPrazoAnual.ConsultarProjecao(const pnValor: real;
-  const pnQtdeParcelas: integer): string;
+function TPrazoAnual.ConsultarProjecao(const Valor: real;
+  const QtdeParcelas: integer): string;
 begin
   // chama o método da classe base,
   // informando o percentual de 10,5% e intervalo de 12 meses
-  result := GerarProjecao(pnValor, 0.105, pnQtdeParcelas, 12);
+  result := GerarProjecao(Valor, 0.105, QtdeParcelas, 12);
 end;
 
 end.

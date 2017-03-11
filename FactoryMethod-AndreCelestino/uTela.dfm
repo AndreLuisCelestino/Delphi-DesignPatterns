@@ -16,57 +16,56 @@ object fTela: TfTela
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object lbValor: TLabel
+  object LabelValor: TLabel
     Left = 8
     Top = 8
     Width = 56
     Height = 13
     Caption = 'Valor Atual:'
   end
-  object lbPrazoPagamento: TLabel
+  object LabelPrazoPagamento: TLabel
     Left = 216
     Top = 8
     Width = 103
     Height = 13
     Caption = 'Prazo de Pagamento:'
   end
-  object lbQtdeParcelas: TLabel
+  object LabelQtdeParcelas: TLabel
     Left = 122
     Top = 8
     Width = 71
     Height = 13
     Caption = 'Qtde Parcelas:'
   end
-  object cmbPrazoPagamento: TComboBox
+  object ComboBoxPrazoPagamento: TComboBox
     Left = 216
     Top = 24
     Width = 105
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 2
     Items.Strings = (
       'Mensal'
       'Semestral'
       'Anual')
   end
-  object edtValor: TEdit
+  object EditValor: TEdit
     Left = 8
     Top = 24
     Width = 100
     Height = 21
     MaxLength = 10
     TabOrder = 0
-    OnKeyPress = edtValorKeyPress
+    OnKeyPress = EditValorKeyPress
   end
-  object btnGerarProjecao: TBitBtn
+  object BitBtnGerarProjecao: TBitBtn
     Left = 332
-    Top = 18
+    Top = 21
     Width = 120
     Height = 25
     Caption = 'Gerar Proje'#231#227'o'
     TabOrder = 3
-    OnClick = btnGerarProjecaoClick
+    OnClick = BitBtnGerarProjecaoClick
   end
   object Memo: TMemo
     Left = 8
@@ -82,13 +81,13 @@ object fTela: TfTela
     ScrollBars = ssVertical
     TabOrder = 4
   end
-  object edtQtdeParcelas: TEdit
+  object EditQtdeParcelas: TEdit
     Left = 122
     Top = 24
     Width = 73
     Height = 21
     MaxLength = 2
     TabOrder = 1
-    OnKeyPress = edtQtdeParcelasKeyPress
+    OnKeyPress = EditQtdeParcelasKeyPress
   end
 end

@@ -7,7 +7,7 @@ uses
 
 type
   TFabricaPrazos = class(TInterfacedObject, IFactoryMethod)
-    function ConsultarPrazo(const psPrazo: string): ITipoPrazo;
+    function ConsultarPrazo(const Prazo: string): ITipoPrazo;
   end;
 
 implementation
@@ -17,16 +17,16 @@ uses
 
 { TFabricaPrazos }
 
-function TFabricaPrazos.ConsultarPrazo(const psPrazo: string): ITipoPrazo;
+function TFabricaPrazos.ConsultarPrazo(const Prazo: string): ITipoPrazo;
 begin
   // Factory Method
   // A decisão de qual método criar fica a critério deste método
 
-  if psPrazo = 'Mensal' then
+  if Prazo = 'Mensal' then
     result := TPrazoMensal.Create
-  else if psPrazo = 'Semestral' then
+  else if Prazo = 'Semestral' then
     result := TPrazoSemestral.Create
-  else if psPrazo = 'Anual' then
+  else if Prazo = 'Anual' then
     result := TPrazoAnual.Create;
 end;
 
