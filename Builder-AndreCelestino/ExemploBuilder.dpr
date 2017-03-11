@@ -12,6 +12,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Builder';
   Application.CreateForm(TDataModuleProdutos, DataModuleProdutos);
   Application.CreateForm(TfTela, fTela);
   Application.Run;

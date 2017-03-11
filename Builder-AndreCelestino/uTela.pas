@@ -1,5 +1,10 @@
 unit uTela;
 
+{
+  Exemplo de Builder com Delphi
+  Criado por André Luis Celestino: www.andrecelestino.com
+}
+
 interface
 
 uses
