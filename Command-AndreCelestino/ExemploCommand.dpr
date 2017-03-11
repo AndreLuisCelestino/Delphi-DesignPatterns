@@ -12,6 +12,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Command';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
