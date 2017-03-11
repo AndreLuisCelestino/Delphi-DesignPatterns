@@ -11,6 +11,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Flyweight';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
