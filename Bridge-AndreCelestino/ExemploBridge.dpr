@@ -15,6 +15,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Bridge';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
