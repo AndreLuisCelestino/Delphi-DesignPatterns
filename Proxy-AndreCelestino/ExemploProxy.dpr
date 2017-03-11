@@ -12,6 +12,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Exemplo de Proxy';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
