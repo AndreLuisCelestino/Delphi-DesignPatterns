@@ -12,6 +12,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Abstract Factory';
   Application.CreateForm(TfAbstractFactory, fAbstractFactory);
   Application.Run;
 end.
