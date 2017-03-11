@@ -14,6 +14,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Adapter';
   Application.CreateForm(TfTela, fTela);
   Application.Run;
 end.
