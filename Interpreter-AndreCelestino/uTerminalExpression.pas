@@ -60,7 +60,7 @@ var
   PosicaoEspaco: integer;
 begin
   // Extrai as strings da entrada do contexto
-  ExtractStrings([' '], [], PAnsiChar(Contexto.Entrada), Partes);
+  ExtractStrings([' '], [], PWideChar(Contexto.Entrada), Partes);
 
   if Pos('Select', Contexto.Saida) > 0 then
   begin
@@ -90,7 +90,7 @@ var
   PosicaoEspaco: integer;
 begin
   // Extrai as strings da entrada do contexto
-  ExtractStrings([' '], [], PAnsiChar(Contexto.Entrada), Partes);
+  ExtractStrings([' '], [], PWideChar(Contexto.Entrada), Partes);
 
   if Pos('Select', Contexto.Saida) > 0 then
   begin
@@ -142,7 +142,7 @@ var
   Valor: string;
 begin
   // Extrai as strings da entrada do contexto
-  ExtractStrings([' '], [], PAnsiChar(Contexto.Entrada), Partes);
+  ExtractStrings([' '], [], PWideChar(Contexto.Entrada), Partes);
 
   // Se existir a palavra "de", significa que a busca é por cidade
   Posicao := Pos(' de ', LowerCase(Contexto.Entrada));
