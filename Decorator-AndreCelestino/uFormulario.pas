@@ -1,5 +1,10 @@
 unit uFormulario;
 
+{
+  Exemplo de Decorator com Delphi
+  Criado por André Luis Celestino: www.andrecelestino.com
+}
+
 interface
 
 uses

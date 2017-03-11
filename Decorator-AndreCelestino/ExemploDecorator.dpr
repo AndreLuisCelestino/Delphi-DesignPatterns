@@ -14,6 +14,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Decorator';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
