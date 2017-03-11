@@ -13,6 +13,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Façade';
   Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.
