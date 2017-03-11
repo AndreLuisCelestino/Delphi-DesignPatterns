@@ -36,7 +36,6 @@ object fFormulario: TfFormulario
         FieldName = 'Codigo'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Width = 50
         Visible = True
       end
       item
@@ -55,7 +54,7 @@ object fFormulario: TfFormulario
         Visible = True
       end>
   end
-  object btnExportarComFlyweight: TBitBtn
+  object BitBtnExportarComFlyweight: TBitBtn
     Left = 8
     Top = 256
     Width = 205
@@ -68,9 +67,9 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    OnClick = btnExportarComFlyweightClick
+    OnClick = BitBtnExportarComFlyweightClick
   end
-  object btnExportarSemFlyweight: TBitBtn
+  object BitBtnExportarSemFlyweight: TBitBtn
     Left = 219
     Top = 256
     Width = 205
@@ -83,18 +82,18 @@ object fFormulario: TfFormulario
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    OnClick = btnExportarSemFlyweightClick
+    OnClick = BitBtnExportarSemFlyweightClick
   end
   object ClientDataSet: TClientDataSet
-    Active = True
-    Aggregates = <>
-    Params = <>
-    Left = 16
-    Top = 216
-    Data = {
+    PersistDataPacket.Data = {
       5B0000009619E0BD0100000018000000030000000000030000005B0006436F64
       69676F0400010000000000044E6F6D6501004900000001000557494454480200
       02003200045061697301004900000001000557494454480200020014000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 40
+    Top = 192
     object ClientDataSetCodigo: TIntegerField
       Alignment = taCenter
       FieldName = 'Codigo'
@@ -110,7 +109,7 @@ object fFormulario: TfFormulario
   end
   object DataSource: TDataSource
     DataSet = ClientDataSet
-    Left = 48
-    Top = 216
+    Left = 112
+    Top = 192
   end
 end

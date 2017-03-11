@@ -9,7 +9,7 @@ type
   { Concrete Flyweight - classe base }
   TCartao = class(TInterfacedObject, ICartao)
   protected
-    PNGArquivo: TPNGObject;
+    PNGArquivo: TPNGImage;
     Mensagem: TStringList;
     FCaminhoImagens: string;
     FNomeLeitor: string;
@@ -58,7 +58,7 @@ begin
   Mensagem := TStringList.Create;
 
   // cria o objeto da classe TPNGObject para exportar o arquivo
-  PNGArquivo := TPNGObject.Create;
+  PNGArquivo := TPNGImage.Create;
   PNGArquivo.Canvas.Font.Name := 'Verdana';
   PNGArquivo.Canvas.Font.Size := 11;
   PNGArquivo.Canvas.Font.Style := [fsBold];

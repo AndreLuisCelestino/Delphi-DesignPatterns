@@ -19,11 +19,11 @@ type
     ClientDataSetPais: TStringField;
     DataSource: TDataSource;
     DBGrid: TDBGrid;
-    btnExportarComFlyweight: TBitBtn;
-    btnExportarSemFlyweight: TBitBtn;
+    BitBtnExportarComFlyweight: TBitBtn;
+    BitBtnExportarSemFlyweight: TBitBtn;
     procedure FormCreate(Sender: TObject);
-    procedure btnExportarComFlyweightClick(Sender: TObject);
-    procedure btnExportarSemFlyweightClick(Sender: TObject);
+    procedure BitBtnExportarComFlyweightClick(Sender: TObject);
+    procedure BitBtnExportarSemFlyweightClick(Sender: TObject);
   end;
 
 var
@@ -44,7 +44,7 @@ begin
 
 end;
 
-procedure TfFormulario.btnExportarComFlyweightClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarComFlyweightClick(Sender: TObject);
 var
   FlyweightFactory: TFlyweightFactory;
   Cartao: TCartao;
@@ -102,7 +102,7 @@ begin
     PChar(ExtractFilePath(ParamStr(0)) + 'cartoes'), nil, nil, SW_SHOWNORMAL);
 end;
 
-procedure TfFormulario.btnExportarSemFlyweightClick(Sender: TObject);
+procedure TfFormulario.BitBtnExportarSemFlyweightClick(Sender: TObject);
 var
   Cartao: TCartao;
   FieldPais: TField;

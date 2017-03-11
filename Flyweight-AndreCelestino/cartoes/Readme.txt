@@ -1,0 +1,1 @@
+As imagens dos cartões serão gerados nesse diretório.
