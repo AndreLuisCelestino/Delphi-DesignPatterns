@@ -13,10 +13,11 @@ object fTela: TfTela
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object lbListaReunioes: TLabel
+  object LabelListaReunioes: TLabel
     Left = 7
     Top = 3
     Width = 85
@@ -32,14 +33,12 @@ object fTela: TfTela
     TabOrder = 0
     OnClick = ListBoxClick
   end
-  object btnNova: TBitBtn
+  object BitBtnNova: TBitBtn
     Left = 7
     Top = 291
     Width = 90
     Height = 25
     Caption = 'Nova'
-    TabOrder = 1
-    OnClick = btnNovaClick
     Glyph.Data = {
       36030000424D3603000000000000360000002800000010000000100000000100
       18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
@@ -67,15 +66,15 @@ object fTela: TfTela
       FF00FFFF00FFFF00FFFF00FFFF00FF08780E08780EFF00FFFF00FFFF00FFFF00
       FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+    TabOrder = 1
+    OnClick = BitBtnNovaClick
   end
-  object btnDuplicar: TBitBtn
+  object BitBtnDuplicar: TBitBtn
     Left = 109
     Top = 291
     Width = 90
     Height = 25
     Caption = 'Duplicar'
-    TabOrder = 2
-    OnClick = btnDuplicarClick
     Glyph.Data = {
       36030000424D3603000000000000360000002800000010000000100000000100
       18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
@@ -103,6 +102,8 @@ object fTela: TfTela
       DAA482DAA482DAA48200669A00CCFF00CCFF00CCFF00CCFF00CCFF00CCFF00CC
       FF00CCFF00CCFF00669AFF00FFFF00FFFF00FFFF00FFFF00FF00669A00669A00
       669A00669A00669A00669A00669A00669A00669A00669A00669A}
+    TabOrder = 2
+    OnClick = BitBtnDuplicarClick
   end
   object Panel: TPanel
     Left = 207
@@ -111,35 +112,35 @@ object fTela: TfTela
     Height = 265
     TabOrder = 3
     Visible = False
-    object lbNomeReuniao: TLabel
+    object LabelNomeReuniao: TLabel
       Left = 8
       Top = 7
       Width = 88
       Height = 13
       Caption = 'Nome da Reuni'#227'o:'
     end
-    object lbData: TLabel
+    object LabelData: TLabel
       Left = 8
       Top = 63
       Width = 27
       Height = 13
       Caption = 'Data:'
     end
-    object lbHora: TLabel
+    object LabelHora: TLabel
       Left = 123
       Top = 64
       Width = 27
       Height = 13
       Caption = 'Hora:'
     end
-    object lbCategoria: TLabel
+    object LabelCategoria: TLabel
       Left = 234
       Top = 63
       Width = 51
       Height = 13
       Caption = 'Categoria:'
     end
-    object Label6: TLabel
+    object LabelParticipantes: TLabel
       Left = 9
       Top = 120
       Width = 66
@@ -180,7 +181,6 @@ object fTela: TfTela
       Top = 78
       Width = 131
       Height = 22
-      ItemHeight = 16
       TabOrder = 3
       OnExit = ColorBoxCategoriaExit
     end

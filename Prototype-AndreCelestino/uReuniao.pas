@@ -8,22 +8,22 @@ uses
 type
   TReuniao = class
   private
-    FsNome: string;
-    FdData: TDate;
-    FtHora: TTime;
-    FoCategoria: TColor;
-    FsParticipantes: string;
+    FNome: string;
+    FData: TDate;
+    FHora: TTime;
+    FCategoria: TColor;
+    FParticipantes: string;
   public
     constructor Create;
 
     // método principal do Prototype
     function Clonar: TReuniao;
 
-    property Nome: string read FsNome write FsNome;
-    property Data: TDate read FdData write FdData;
-    property Hora: TTime read FtHora write FtHora;
-    property Categoria: TColor read FoCategoria write FoCategoria;
-    property Participantes: string read FsParticipantes write FsParticipantes;
+    property Nome: string read FNome write FNome;
+    property Data: TDate read FData write FData;
+    property Hora: TTime read FHora write FHora;
+    property Categoria: TColor read FCategoria write FCategoria;
+    property Participantes: string read FParticipantes write FParticipantes;
   end;
 
 implementation
@@ -32,28 +32,28 @@ implementation
 
 function TReuniao.Clonar: TReuniao;
 var
-  oNovaReuniao: TReuniao;
+  NovaReuniao: TReuniao;
 begin
   // cria um novo objeto
-  oNovaReuniao := TReuniao.Create;
+  NovaReuniao := TReuniao.Create;
 
   // copia todas as propriedades do objeto atual,
   // atribuindo-as ao clone
-  oNovaReuniao.Nome := Self.Nome;
-  oNovaReuniao.Data := Self.Data;
-  oNovaReuniao.Hora := Self.Hora;
-  oNovaReuniao.Categoria := Self.Categoria;
-  oNovaReuniao.Participantes := Self.Participantes;
+  NovaReuniao.Nome := Self.Nome;
+  NovaReuniao.Data := Self.Data;
+  NovaReuniao.Hora := Self.Hora;
+  NovaReuniao.Categoria := Self.Categoria;
+  NovaReuniao.Participantes := Self.Participantes;
 
   // retorna o clone criado
-  result := oNovaReuniao;
+  result := NovaReuniao;
 end;
 
 constructor TReuniao.Create;
 begin
-  FdData := Date;
-  FtHora := Time;
-  FoCategoria := clBlack;
+  FData := Date;
+  FHora := Time;
+  FCategoria := clBlack;
 end;
 
 end.

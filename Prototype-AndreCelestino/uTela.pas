@@ -3,30 +3,30 @@ unit uTela;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  System.UITypes, Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons, ComCtrls, Contnrs, ExtCtrls, uReuniao;
 
 type
   TfTela = class(TForm)
-    lbListaReunioes: TLabel;
+    LabelListaReunioes: TLabel;
     ListBox: TListBox;
-    btnNova: TBitBtn;
-    btnDuplicar: TBitBtn;
+    BitBtnNova: TBitBtn;
+    BitBtnDuplicar: TBitBtn;
     Panel: TPanel;
-    lbNomeReuniao: TLabel;
+    LabelNomeReuniao: TLabel;
     EditNome: TEdit;
-    lbData: TLabel;
+    LabelData: TLabel;
     DateTimePickerData: TDateTimePicker;
-    lbHora: TLabel;
+    LabelHora: TLabel;
     DateTimePickerHora: TDateTimePicker;
-    lbCategoria: TLabel;
+    LabelCategoria: TLabel;
     ColorBoxCategoria: TColorBox;
-    Label6: TLabel;
+    LabelParticipantes: TLabel;
     MemoParticipantes: TMemo;
     procedure EditNomeExit(Sender: TObject);
     procedure DateTimePickerDataExit(Sender: TObject);
-    procedure btnDuplicarClick(Sender: TObject);
-    procedure btnNovaClick(Sender: TObject);
+    procedure BitBtnDuplicarClick(Sender: TObject);
+    procedure BitBtnNovaClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ListBoxClick(Sender: TObject);
     procedure DateTimePickerHoraExit(Sender: TObject);
@@ -34,10 +34,10 @@ type
     procedure MemoParticipantesExit(Sender: TObject);
   private
     // lista de objetos que armazenará as reuniões
-    FoListaReunioes: TObjectList;
+    ListaReunioes: TObjectList;
 
     // variável para armazenar a reunião atualmente selecionada
-    FoReuniaoSelecionada: TReuniao;
+    ReuniaoSelecionada: TReuniao;
 
     procedure AdicionarNovaReuniaoNaListBox;
     procedure PreencherDados;
@@ -52,31 +52,31 @@ implementation
 
 procedure TfTela.EditNomeExit(Sender: TObject);
 begin
-  FoReuniaoSelecionada.Nome := Trim(EditNome.Text);
+  ReuniaoSelecionada.Nome := Trim(EditNome.Text);
 end;
 
 procedure TfTela.DateTimePickerDataExit(Sender: TObject);
 begin
-  FoReuniaoSelecionada.Data := DateTimePickerData.Date;
+  ReuniaoSelecionada.Data := DateTimePickerData.Date;
 end;
 
-procedure TfTela.btnDuplicarClick(Sender: TObject);
+procedure TfTela.BitBtnDuplicarClick(Sender: TObject);
 var
-  oReuniaoClone: TReuniao;
+  ReuniaoClone: TReuniao;
 begin
   if ListBox.Count = 0 then
   begin
     MessageDlg('Não existem reuniões na lista! Clique em "Nova" para adicionar.',
       mtInformation, [mbOK], 0);
-    btnNova.SetFocus;
+    BitBtnNova.SetFocus;
     Exit;
   end;
 
   // comando para CLONAR uma nova reunião
-  oReuniaoClone := FoReuniaoSelecionada.Clonar;
+  ReuniaoClone := ReuniaoSelecionada.Clonar;
 
   // adiciona o clone na lista de reuniões
-  FoListaReunioes.Add(oReuniaoClone);
+  ListaReunioes.Add(ReuniaoClone);
 
   // adiciona o clone na ListBox
   AdicionarNovaReuniaoNaListBox;
@@ -87,17 +87,17 @@ begin
   EditNome.SetFocus;
 end;
 
-procedure TfTela.btnNovaClick(Sender: TObject);
+procedure TfTela.BitBtnNovaClick(Sender: TObject);
 var
-  oNovaReuniao: TReuniao;
+  NovaReuniao: TReuniao;
 begin
   Panel.Visible := True;
 
   // comando para CRIAR uma nova reunião
-  oNovaReuniao := TReuniao.Create;
+  NovaReuniao := TReuniao.Create;
 
   // adiciona o clone na lista de reuniões
-  FoListaReunioes.Add(oNovaReuniao);
+  ListaReunioes.Add(NovaReuniao);
 
   // adiciona o clone na ListBox
   AdicionarNovaReuniaoNaListBox;
@@ -111,7 +111,7 @@ end;
 procedure TfTela.FormCreate(Sender: TObject);
 begin
   // cria a lista de objetos que armazenará as reuniões
-  FoListaReunioes := TObjectList.Create;
+  ListaReunioes := TObjectList.Create;
 end;
 
 procedure TfTela.ListBoxClick(Sender: TObject);
@@ -121,17 +121,17 @@ end;
 
 procedure TfTela.DateTimePickerHoraExit(Sender: TObject);
 begin
-  FoReuniaoSelecionada.Hora := DateTimePickerHora.Time;
+  ReuniaoSelecionada.Hora := DateTimePickerHora.Time;
 end;
 
 procedure TfTela.ColorBoxCategoriaExit(Sender: TObject);
 begin
-  FoReuniaoSelecionada.Categoria := ColorBoxCategoria.Selected;
+  ReuniaoSelecionada.Categoria := ColorBoxCategoria.Selected;
 end;
 
 procedure TfTela.MemoParticipantesExit(Sender: TObject);
 begin
-  FoReuniaoSelecionada.Participantes := MemoParticipantes.Text;
+  ReuniaoSelecionada.Participantes := MemoParticipantes.Text;
 end;
 
 procedure TfTela.AdicionarNovaReuniaoNaListBox;
@@ -145,13 +145,13 @@ procedure TfTela.PreencherDados;
 begin
   // seleciona a reunião na lista de objetos conforme o ItemIndex da ListBox
   // e atribui à variável FoReuniaoSelecionada
-  FoReuniaoSelecionada := FoListaReunioes[ListBox.ItemIndex] as TReuniao;
+  ReuniaoSelecionada := ListaReunioes[ListBox.ItemIndex] as TReuniao;
 
-  EditNome.Text := FoReuniaoSelecionada.Nome;
-  DateTimePickerData.Date := FoReuniaoSelecionada.Data;
-  DateTimePickerHora.Time := FoReuniaoSelecionada.Hora;
-  ColorBoxCategoria.Selected := FoReuniaoSelecionada.Categoria;
-  MemoParticipantes.Text := FoReuniaoSelecionada.Participantes;
+  EditNome.Text := ReuniaoSelecionada.Nome;
+  DateTimePickerData.Date := ReuniaoSelecionada.Data;
+  DateTimePickerHora.Time := ReuniaoSelecionada.Hora;
+  ColorBoxCategoria.Selected := ReuniaoSelecionada.Categoria;
+  MemoParticipantes.Text := ReuniaoSelecionada.Participantes;
 end;
 
 end.

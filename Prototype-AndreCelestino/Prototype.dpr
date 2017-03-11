@@ -9,6 +9,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Exemplo de Prototype';
   Application.CreateForm(TfTela, fTela);
   Application.Run;
 end.
