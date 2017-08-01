@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/31 00:08:19.000.491,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 21:38:16.000.438,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 22:47:35.000.397,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/14 22:15:58.000.729,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/28 23:36:17.000.571,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/28 23:36:52.000.762,D:\Temp\Observer-AndreCelestino\View.Formulario.dfm=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2017/07/28 23:36:52.000.761,D:\Temp\Observer-AndreCelestino\View.Formulario.pas=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/28 23:36:59.000.373,D:\Temp\Observer-AndreCelestino\ExemploObserver.dproj=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/07/30 16:56:21.000.434,=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/07/30 16:56:38.000.879,D:\Temp\Observer-AndreCelestino\Unit1.dfm=D:\Temp\Observer-AndreCelestino\Pattern.ConcreteSubject.dfm</Transaction>
+    <Transaction>2017/07/30 16:56:38.000.879,D:\Temp\Observer-AndreCelestino\Unit1.pas=D:\Temp\Observer-AndreCelestino\Pattern.ConcreteSubject.pas</Transaction>
+    <Transaction>2017/07/30 17:04:31.000.142,=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/07/30 17:04:48.000.217,D:\Temp\Observer-AndreCelestino\Unit1.pas=D:\Temp\Observer-AndreCelestino\Model.Notification.pas</Transaction>
+    <Transaction>2017/07/30 17:09:12.000.615,=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/07/30 17:09:22.000.225,D:\Temp\Observer-AndreCelestino\Unit1.pas=D:\Temp\Observer-AndreCelestino\Pattern.Subject.pas</Transaction>
+    <Transaction>2017/07/30 17:11:46.000.468,=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/07/30 17:12:01.000.368,D:\Temp\Observer-AndreCelestino\Unit1.pas=D:\Temp\Observer-AndreCelestino\Pattern.Observer.pas</Transaction>
+    <Transaction>2017/07/30 17:30:12.000.367,=D:\Temp\Observer-AndreCelestino\Unit2.pas</Transaction>
+    <Transaction>2017/07/30 17:30:58.000.402,D:\Temp\Observer-AndreCelestino\Unit2.pas=D:\Temp\Observer-AndreCelestino\Pattern.ObserverSaldo.pas</Transaction>
+    <Transaction>2017/07/30 17:30:58.000.402,D:\Temp\Observer-AndreCelestino\Unit2.dfm=D:\Temp\Observer-AndreCelestino\Pattern.ObserverSaldo.dfm</Transaction>
+    <Transaction>2017/07/30 18:00:39.000.513,=D:\Temp\Observer-AndreCelestino\Unit3.pas</Transaction>
+    <Transaction>2017/07/30 18:02:12.000.263,D:\Temp\Observer-AndreCelestino\Unit3.dfm=D:\Temp\Observer-AndreCelestino\Pattern.ObserverLog.dfm</Transaction>
+    <Transaction>2017/07/30 18:02:12.000.263,D:\Temp\Observer-AndreCelestino\Unit3.pas=D:\Temp\Observer-AndreCelestino\Pattern.ObserverLog.pas</Transaction>
+    <Transaction>2017/07/30 18:27:50.000.827,=D:\Temp\Observer-AndreCelestino\Unit2.pas</Transaction>
+    <Transaction>2017/07/30 18:52:16.000.681,D:\Temp\Observer-AndreCelestino\Pattern.ConcreteSubject.pas=</Transaction>
+    <Transaction>2017/07/30 18:52:25.000.987,=D:\Temp\Observer-AndreCelestino\Pattern.ConcreteSubject.pas</Transaction>
+    <Transaction>2017/07/30 23:13:32.000.088,=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/07/30 23:15:19.000.985,D:\Temp\Observer-AndreCelestino\Pattern.ObserverAgrupamento.dfm=D:\Temp\Observer-AndreCelestino\Unit1.dfm</Transaction>
+    <Transaction>2017/07/30 23:15:19.000.985,D:\Temp\Observer-AndreCelestino\Pattern.ObserverAgrupamento.pas=D:\Temp\Observer-AndreCelestino\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
