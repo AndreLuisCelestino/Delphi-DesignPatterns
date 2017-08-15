@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/31 00:08:19.000.491,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 21:38:16.000.438,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 22:47:35.000.397,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/14 22:15:58.000.729,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/09 21:20:52.000.317,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 14:12:58.000.884,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 14:13:24.000.571,D:\Temp\State-AndreCelestino\View.Formulario.pas=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 14:13:24.000.571,D:\Temp\State-AndreCelestino\View.Formulario.dfm=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2017/08/12 14:13:27.000.086,D:\Temp\State-AndreCelestino\ExemploState.dproj=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/08/12 18:58:00.000.237,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 18:58:09.000.407,D:\Temp\State-AndreCelestino\Model.Pedido.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:00:48.000.206,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:00:57.000.273,D:\Temp\State-AndreCelestino\Pattern.Context.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:22:36.000.739,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:22:50.000.196,D:\Temp\State-AndreCelestino\Pattern.State.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:23:22.000.786,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:23:40.000.670,D:\Temp\State-AndreCelestino\Pattern.StateCadastro.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:23:45.000.216,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:23:56.000.082,D:\Temp\State-AndreCelestino\Pattern.StateAnalise.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:24:54.000.749,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 19:25:12.000.543,D:\Temp\State-AndreCelestino\Pattern.StateAprovado.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 22:20:51.000.172,D:\Temp\State-AndreCelestino\Model.Pedido.pas=</Transaction>
+    <Transaction>2017/08/12 22:21:17.000.276,D:\Temp\State-AndreCelestino\Pattern.StateCadastro.pas=D:\Temp\State-AndreCelestino\Pattern.StateSimples.pas</Transaction>
+    <Transaction>2017/08/12 22:28:44.000.497,D:\Temp\State-AndreCelestino\Pattern.StateAnalise.pas=D:\Temp\State-AndreCelestino\Pattern.StateRegular.pas</Transaction>
+    <Transaction>2017/08/12 22:31:51.000.508,D:\Temp\State-AndreCelestino\Pattern.StateAprovado.pas=D:\Temp\State-AndreCelestino\Pattern.StatePremium.pas</Transaction>
+    <Transaction>2017/08/13 22:40:58.000.996,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/13 22:47:35.000.388,D:\Temp\State-AndreCelestino\Utils.Enumerated.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/14 20:45:25.218,=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/14 20:45:53.330,D:\Temp\State-AndreCelestino\Pattern.StateBase.pas=D:\Temp\State-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/14 20:46:23.226,D:\Temp\State-AndreCelestino\Pattern.StateOuro.pas=D:\Temp\State-AndreCelestino\Pattern.StatePremium.pas</Transaction>
+    <Transaction>2017/08/14 20:48:04.953,D:\Temp\State-AndreCelestino\Pattern.StatePrata.pas=D:\Temp\State-AndreCelestino\Pattern.StateRegular.pas</Transaction>
+    <Transaction>2017/08/14 21:03:37.845,D:\Temp\State-AndreCelestino\Pattern.StateBronze.pas=D:\Temp\State-AndreCelestino\Pattern.StateSimples.pas</Transaction>
+  </Transactions>
+</BorlandProject>
