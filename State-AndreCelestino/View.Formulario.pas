@@ -46,6 +46,7 @@ type
     procedure DBGridCellClick(Column: TColumn);
     procedure DBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
+    procedure EditValorKeyPress(Sender: TObject; var Key: Char);
   private
     FContext: TContext;
 
@@ -155,6 +156,12 @@ begin
   end;
 end;
 
+procedure TfFormulario.EditValorKeyPress(Sender: TObject; var Key: Char);
+begin
+  if not (CharInSet(Key, ['0'..'9', #8, #44])) then
+    Key := #0;
+end;
+
 procedure TfFormulario.FormCreate(Sender: TObject);
 begin
   // Cria o Context
@@ -177,5 +184,8 @@ begin
 
   ClientDataSet.Delete;
 end;
+
+initialization
+  ReportMemoryLeaksOnShutdown := True;
 
 end.
