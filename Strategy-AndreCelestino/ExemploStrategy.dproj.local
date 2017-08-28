@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/31 00:08:19.000.491,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 21:38:16.000.438,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 22:47:35.000.397,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/14 22:15:58.000.729,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/09 21:20:52.000.317,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:15:59.000.551,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:42:17.000.088,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:16:19.000.332,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:16:47.000.359,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Temp\Strategy-AndreCelestino\View.Formulario.dfm</Transaction>
+    <Transaction>2017/08/25 21:16:47.000.359,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Temp\Strategy-AndreCelestino\View.Formulario.pas</Transaction>
+    <Transaction>2017/08/25 21:16:50.000.858,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Temp\Strategy-AndreCelestino\ExemploStrategy.dproj</Transaction>
+    <Transaction>2017/08/25 21:16:57.000.051,=D:\Temp\Strategy-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:17:03.000.819,D:\Temp\Strategy-AndreCelestino\Unit1.pas=D:\Temp\Strategy-AndreCelestino\Pattern.Context.pas</Transaction>
+    <Transaction>2017/08/25 21:17:29.000.508,=D:\Temp\Strategy-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:17:33.000.949,D:\Temp\Strategy-AndreCelestino\Unit1.pas=D:\Temp\Strategy-AndreCelestino\Pattern.Strategy.pas</Transaction>
+    <Transaction>2017/08/25 21:17:36.000.722,=D:\Temp\Strategy-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:17:43.000.874,D:\Temp\Strategy-AndreCelestino\Unit1.pas=D:\Temp\Strategy-AndreCelestino\Pattern.ConcreteStrategyDLL.pas</Transaction>
+    <Transaction>2017/08/25 21:17:47.000.619,=D:\Temp\Strategy-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:18:09.000.793,D:\Temp\Strategy-AndreCelestino\Unit1.pas=D:\Temp\Strategy-AndreCelestino\Pattern.ConcreteStrategyRegExLib.pas</Transaction>
+    <Transaction>2017/08/25 21:18:12.000.094,=D:\Temp\Strategy-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 21:18:58.000.252,D:\Temp\Strategy-AndreCelestino\Unit1.pas=D:\Temp\Strategy-AndreCelestino\Pattern.ConcreteStrategyMailBoxLayer.pas</Transaction>
+    <Transaction>2017/08/25 22:06:17.000.215,=D:\Temp\Strategy-AndreCelestino\WebServices.pas</Transaction>
+    <Transaction>2017/08/25 22:06:25.000.059,D:\Temp\Strategy-AndreCelestino\WebService.RegExLib.pas=D:\Temp\Strategy-AndreCelestino\WebServices.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
