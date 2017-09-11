@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/31 00:08:19.000.491,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 21:38:16.000.438,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 22:47:35.000.397,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/14 22:15:58.000.729,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/09 21:20:52.000.317,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:15:59.000.551,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:42:17.000.088,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 23:45:49.000.260,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/06 22:05:34.000.507,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/06 22:05:44.000.145,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Temp\TemplateMethod-AndreCelestino\View.Formulario.dfm</Transaction>
+    <Transaction>2017/09/06 22:05:44.000.145,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Temp\TemplateMethod-AndreCelestino\View.Formulario.pas</Transaction>
+    <Transaction>2017/09/06 22:05:47.000.825,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Temp\TemplateMethod-AndreCelestino\ExemploTemplateMethod.dproj</Transaction>
+    <Transaction>2017/09/06 22:06:05.000.296,=D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/06 22:06:48.000.014,D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas=D:\Temp\TemplateMethod-AndreCelestino\Pattern.AbstractClass.pas</Transaction>
+    <Transaction>2017/09/06 22:06:54.000.382,=D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/06 22:07:22.000.461,D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas=D:\Temp\TemplateMethod-AndreCelestino\Pattern.ConcreteClassRepositories.pas</Transaction>
+    <Transaction>2017/09/06 22:07:25.000.105,=D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/06 22:07:32.000.044,D:\Temp\TemplateMethod-AndreCelestino\Unit1.pas=D:\Temp\TemplateMethod-AndreCelestino\Pattern.ConcreteClassUsers.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
