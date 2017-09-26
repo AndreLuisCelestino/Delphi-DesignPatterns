@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/31 00:08:19.000.491,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 21:38:16.000.438,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/27 22:47:35.000.397,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/14 22:15:58.000.729,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/09 21:20:52.000.317,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:15:59.000.551,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 15:42:17.000.088,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 23:45:49.000.260,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/11 19:13:04.000.431,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 21:38:05.000.303,=C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 21:39:00.000.135,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Temp\Visitor-AndreCelestino\View.Formulario.pas</Transaction>
+    <Transaction>2017/09/23 21:39:00.000.135,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Temp\Visitor-AndreCelestino\View.Formulario.dfm</Transaction>
+    <Transaction>2017/09/23 21:39:03.000.959,C:\Users\Andre\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Temp\Visitor-AndreCelestino\ExemploVisitor.dproj</Transaction>
+    <Transaction>2017/09/23 21:39:10.000.040,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 22:01:57.000.004,D:\Temp\Visitor-AndreCelestino\Unit1.pas=D:\Temp\Visitor-AndreCelestino\Pattern.Visitor.pas</Transaction>
+    <Transaction>2017/09/23 22:03:15.000.452,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 22:10:19.000.596,D:\Temp\Visitor-AndreCelestino\Unit1.pas=D:\Temp\Visitor-AndreCelestino\Pattern.Element.pas</Transaction>
+    <Transaction>2017/09/23 22:11:01.000.296,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 22:21:43.000.834,D:\Temp\Visitor-AndreCelestino\Unit1.pas=D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElementFuncionario.pas</Transaction>
+    <Transaction>2017/09/23 23:12:55.000.648,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:13:51.000.586,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElementGerente.pas=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:14:00.000.139,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:14:11.000.165,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteVisitorSalario.pas=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:15:19.000.253,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:15:27.000.483,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElementSenioridade.pas=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:44:03.000.408,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:44:30.000.898,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElement.pas=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/23 23:50:20.000.367,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElement.pas=</Transaction>
+    <Transaction>2017/09/24 00:15:08.000.387,=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/24 00:15:15.000.644,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElement.pas=D:\Temp\Visitor-AndreCelestino\Unit1.pas</Transaction>
+    <Transaction>2017/09/24 00:15:52.000.415,D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElementOperacional.pas=D:\Temp\Visitor-AndreCelestino\Pattern.ConcreteElementFuncionario.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
