@@ -1,9 +1,9 @@
-unit uFormatoXLS;
+unit Pattern.ConcreteImplementorXLS;
 
 interface
 
 uses
-  ExcelXP, uInterfaceFormato;
+  ExcelXP, Pattern.Implementor;
 
 type
   { Concrete Implementor }

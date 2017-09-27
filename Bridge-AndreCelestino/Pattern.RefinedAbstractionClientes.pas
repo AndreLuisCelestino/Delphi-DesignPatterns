@@ -1,11 +1,12 @@
-unit uExportadorClientes;
+unit Pattern.RefinedAbstractionClientes;
 
 interface
 
 uses
-  uInterfaceExportador, uInterfaceFormato;
+  Pattern.Abstraction, Pattern.Implementor;
 
 type
+  { Refined Abstraction }
   TExportadorClientes = class(TInterfacedObject, IExportador)
   private
     Formato: IFormato;

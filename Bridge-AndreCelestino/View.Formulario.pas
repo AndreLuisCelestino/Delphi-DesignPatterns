@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Bridge com Delphi
@@ -45,7 +45,8 @@ var
 implementation
 
 uses
-  uInterfaceExportador, uExportadorClientes, uExportadorProdutos, uFormatoXLS, uFormatoHTML;
+  Pattern.Abstraction, Pattern.RefinedAbstractionClientes, Pattern.RefinedAbstractionProdutos,
+  Pattern.ConcreteImplementorXLS, Pattern.ConcreteImplementorHTML;
 
 {$R *.dfm}
 

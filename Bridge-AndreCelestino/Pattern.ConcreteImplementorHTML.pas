@@ -1,9 +1,9 @@
-unit uFormatoHTML;
+unit Pattern.ConcreteImplementorHTML;
 
 interface
 
 uses
-  Classes, uInterfaceFormato;
+  Classes, Pattern.Implementor;
 
 type
   { Concrete Implementor }
