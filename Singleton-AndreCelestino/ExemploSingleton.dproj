@@ -110,7 +110,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="View.Formulario.pas">
-            <Form>fTela</Form>
+            <Form>fFormulario</Form>
         </DCCReference>
         <DCCReference Include="View.Cadastro.pas">
             <Form>fCadastro</Form>

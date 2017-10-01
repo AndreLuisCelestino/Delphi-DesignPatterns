@@ -12,7 +12,7 @@ uses
   Dialogs, ExtCtrls, StdCtrls, Buttons;
 
 type
-  TfTela = class(TForm)
+  TfFormulario = class(TForm)
     BitBtnCadastrarParticipantes: TBitBtn;
     BitBtnRealizarSorteio: TBitBtn;
     BitBtnAbrirLog: TBitBtn;
@@ -24,7 +24,7 @@ type
   end;
 
 var
-  fTela: TfTela;
+  fFormulario: TfFormulario;
 
 implementation
 
@@ -33,7 +33,7 @@ uses
 
 {$R *.dfm}
 
-procedure TfTela.BitBtnAbrirLogClick(Sender: TObject);
+procedure TfFormulario.BitBtnAbrirLogClick(Sender: TObject);
 var
   DiretorioAplicacao: string;
 begin
@@ -42,7 +42,7 @@ begin
   ShellExecute(Handle, 'open', PWideChar(DiretorioAplicacao + 'Log.txt'), nil, nil, SW_SHOWNORMAL);
 end;
 
-procedure TfTela.FormShow(Sender: TObject);
+procedure TfFormulario.FormShow(Sender: TObject);
 var
   Logger: TLoggerSingleton;
 begin
@@ -51,7 +51,7 @@ begin
   Logger.RegistrarLog('Usuário iniciou a aplicação.');
 end;
 
-procedure TfTela.BitBtnCadastrarParticipantesClick(Sender: TObject);
+procedure TfFormulario.BitBtnCadastrarParticipantesClick(Sender: TObject);
 var
   fCadastro: TfCadastro;
 begin
@@ -61,7 +61,7 @@ begin
   FreeAndNil(fCadastro);
 end;
 
-procedure TfTela.BitBtnRealizarSorteioClick(Sender: TObject);
+procedure TfFormulario.BitBtnRealizarSorteioClick(Sender: TObject);
 var
   fSorteio: TfSorteio;
 begin
