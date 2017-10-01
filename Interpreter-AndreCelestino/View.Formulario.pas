@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Interpreter com Delphi
@@ -33,7 +33,7 @@ var
 implementation
 
 uses
-  uContext, uAbstractExpression, uTerminalExpression;
+  Pattern.Context, Pattern.AbstractExpression, Pattern.TerminalExpression;
 
 {$R *.dfm}
 

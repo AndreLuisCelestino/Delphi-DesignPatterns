@@ -1,4 +1,4 @@
-unit uSubsystemCalculoLoja;
+unit Pattern.Subsystem.CalculoLoja;
 
 interface
 

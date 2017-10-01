@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Proxy com Delphi
@@ -9,10 +9,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uSubject, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Pattern.Subject, Vcl.StdCtrls, Vcl.Buttons,
   Vcl.ExtCtrls;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     BitBtnCalcularDistancia: TBitBtn;
     ComboBoxEstadoOrigem: TComboBox;
@@ -32,7 +33,7 @@ var
 implementation
 
 uses
-  uProxy, uRealSubject;
+  Pattern.Proxy, Pattern.RealSubject;
 
 {$R *.dfm}
 

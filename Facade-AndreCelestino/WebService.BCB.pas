@@ -6,7 +6,7 @@
 // Version  : 1.0
 // ************************************************************************ //
 
-unit uWSDL_BCB;
+unit WebService.BCB;
 
 interface
 

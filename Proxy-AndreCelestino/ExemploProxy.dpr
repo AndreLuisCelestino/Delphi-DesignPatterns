@@ -2,10 +2,10 @@ program ExemploProxy;
 
 uses
   Vcl.Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uSubject in 'uSubject.pas',
-  uProxy in 'uProxy.pas',
-  uRealSubject in 'uRealSubject.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Subject in 'Pattern.Subject.pas',
+  Pattern.Proxy in 'Pattern.Proxy.pas',
+  Pattern.RealSubject in 'Pattern.RealSubject.pas';
 
 {$R *.res}
 

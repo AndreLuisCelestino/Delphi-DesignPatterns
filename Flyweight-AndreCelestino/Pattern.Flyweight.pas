@@ -1,4 +1,4 @@
-unit uFlyweight;
+unit Pattern.Flyweight;
 
 interface
 

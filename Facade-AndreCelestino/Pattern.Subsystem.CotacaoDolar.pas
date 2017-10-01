@@ -1,4 +1,4 @@
-unit uSubsystemCotacaoDolar;
+unit Pattern.Subsystem.CotacaoDolar;
 
 interface
 
@@ -12,7 +12,7 @@ type
 implementation
 
 uses
-  SysUtils, uWSDL_BCB, SOAPHTTPClient, Windows;
+  SysUtils, WebService.BCB, SOAPHTTPClient, Windows;
 
 { TSubsystemCotacaoDolar }
 

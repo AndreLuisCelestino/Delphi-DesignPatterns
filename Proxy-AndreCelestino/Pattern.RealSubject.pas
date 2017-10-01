@@ -1,9 +1,9 @@
-unit uRealSubject;
+unit Pattern.RealSubject;
 
 interface
 
 uses
-  uSubject;
+  Pattern.Subject;
 
 type
   { Real Subject }

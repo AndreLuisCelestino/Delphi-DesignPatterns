@@ -1,4 +1,4 @@
-unit uCommand;
+unit Pattern.Command;
 
 interface
 

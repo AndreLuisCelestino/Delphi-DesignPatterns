@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Chain of Responsibility com Delphi
@@ -13,6 +13,7 @@ uses
   Vcl.StdCtrls, Vcl.Buttons, Data.DB, Datasnap.DBClient;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     LabelArquivo: TLabel;
     EditArquivo: TEdit;
@@ -33,7 +34,7 @@ var
 implementation
 
 uses
-  uHandler, uConcreteHandler;
+  Pattern.Handler, Pattern.ConcreteHandler;
 
 {$R *.dfm}
 

@@ -45,7 +45,7 @@ var
 implementation
 
 uses
-  Pattern.Abstraction, Pattern.RefinedAbstractionClientes, Pattern.RefinedAbstractionProdutos,
+  Pattern.Abstraction, Pattern.RefinedAbstraction.Clientes, Pattern.RefinedAbstraction.Produtos,
   Pattern.ConcreteImplementorXLS, Pattern.ConcreteImplementorHTML;
 
 {$R *.dfm}

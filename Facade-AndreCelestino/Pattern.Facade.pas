@@ -1,4 +1,4 @@
-unit uFacade;
+unit Pattern.Facade;
 
 interface
 
@@ -13,7 +13,8 @@ type
 implementation
 
 uses
-  SysUtils, uSubsystemCotacaoDolar, uSubsystemCalculoLoja, uSubsystemHistorico;
+  SysUtils, Pattern.Subsystem.CotacaoDolar, Pattern.Subsystem.CalculoLoja,
+  Pattern.Subsystem.Historico;
 
 { TFacade }
 

@@ -1,9 +1,9 @@
-unit uConcreteFlyweight;
+unit Pattern.ConcreteFlyweight;
 
 interface
 
 uses
-  Classes, ExtCtrls, uFlyweight, PNGImage;
+  Classes, ExtCtrls, Pattern.Flyweight, PNGImage;
 
 type
   { Concrete Flyweight - classe base }

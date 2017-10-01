@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Command com Delphi
@@ -12,6 +12,7 @@ uses
   Dialogs, StdCtrls, Buttons;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     GroupBox: TGroupBox;
     MemoProgramas: TMemo;
@@ -25,6 +26,7 @@ type
     LabelVariaveisAmbiente: TLabel;
     MemoVariaveis: TMemo;
     procedure BitBtnExecutarComandosClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   end;
 
 var
@@ -33,7 +35,7 @@ var
 implementation
 
 uses
-  uCommand, uReceiver, uInvoker, uConcreteCommand;
+  System.UITypes, Pattern.Command, Pattern.Receiver, Pattern.Invoker, Pattern.ConcreteCommand;
 
 {$R *.dfm}
 
@@ -89,6 +91,13 @@ begin
   // Carrega a lista de variáveis de ambiente extraídas
   if FileExists(GetCurrentDir + '\Info\Variaveis.txt') then
     MemoVariaveis.Lines.LoadFromFile(GetCurrentDir + '\Info\Variaveis.txt');
+end;
+
+procedure TfFormulario.FormShow(Sender: TObject);
+begin
+  MessageDlg('Devido à restrições do Windows 10, a aplicação deverá ser executada ' +
+    'com privilégios de Administrador para que a extração da lista de programas funcione.',
+    mtWarning, [mbOK], 0);
 end;
 
 end.

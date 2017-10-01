@@ -2,12 +2,12 @@ program ExemploFacade;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uFacade in 'uFacade.pas',
-  uWSDL_BCB in 'uWSDL_BCB.pas',
-  uSubsystemCotacaoDolar in 'uSubsystemCotacaoDolar.pas',
-  uSubsystemCalculoLoja in 'uSubsystemCalculoLoja.pas',
-  uSubsystemHistorico in 'uSubsystemHistorico.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Facade in 'Pattern.Facade.pas',
+  WebService.BCB in 'WebService.BCB.pas',
+  Pattern.Subsystem.CotacaoDolar in 'Pattern.Subsystem.CotacaoDolar.pas',
+  Pattern.Subsystem.CalculoLoja in 'Pattern.Subsystem.CalculoLoja.pas',
+  Pattern.Subsystem.Historico in 'Pattern.Subsystem.Historico.pas';
 
 {$R *.res}
 

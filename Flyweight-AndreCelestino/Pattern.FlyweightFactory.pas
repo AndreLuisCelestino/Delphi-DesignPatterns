@@ -1,9 +1,9 @@
-unit uFlyweightFactory;
+unit Pattern.FlyweightFactory;
 
 interface
 
 uses
-  Classes, uFlyweight, uConcreteFlyweight;
+  Classes, Pattern.Flyweight, Pattern.ConcreteFlyweight;
 
 type
   TFlyweightFactory = class

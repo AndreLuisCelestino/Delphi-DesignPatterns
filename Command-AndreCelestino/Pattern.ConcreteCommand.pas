@@ -1,9 +1,9 @@
-unit uConcreteCommand;
+unit Pattern.ConcreteCommand;
 
 interface
 
 uses
-  uCommand, uReceiver;
+  Pattern.Command, Pattern.Receiver;
 
 type
   { Concrete Command }

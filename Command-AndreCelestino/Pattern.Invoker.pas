@@ -1,9 +1,9 @@
-unit uInvoker;
+unit Pattern.Invoker;
 
 interface
 
 uses
-  uCommand, Classes;
+  Pattern.Command, Classes;
 
 type
   { Invoker }

@@ -14,6 +14,7 @@ object fFormulario: TfFormulario
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object LabelProgramas: TLabel
@@ -115,8 +116,6 @@ object fFormulario: TfFormulario
     Width = 169
     Height = 41
     Caption = 'Executar Comandos'
-    TabOrder = 3
-    OnClick = BitBtnExecutarComandosClick
     Glyph.Data = {
       F6060000424DF606000000000000360000002800000018000000180000000100
       180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
@@ -174,6 +173,8 @@ object fFormulario: TfFormulario
       DAA482DAA482DAA4829C837EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
       FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+    TabOrder = 3
+    OnClick = BitBtnExecutarComandosClick
   end
   object MemoVariaveis: TMemo
     Left = 440

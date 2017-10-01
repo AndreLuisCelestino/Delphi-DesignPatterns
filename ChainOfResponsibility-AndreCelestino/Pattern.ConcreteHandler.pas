@@ -1,9 +1,9 @@
-unit uConcreteHandler;
+unit Pattern.ConcreteHandler;
 
 interface
 
 uses
-  DBClient, uHandler;
+  DBClient, Pattern.Handler;
 
 type
   { Concrete Handler - Processador de TXT}

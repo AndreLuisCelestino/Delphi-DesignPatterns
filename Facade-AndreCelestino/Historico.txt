@@ -1,0 +1,7 @@
+Data/Hora.........: 01/10/2017 - 18:10:17
+Cotação do Dólar..: 3,17
+Conversão em R$...: 110,88
+Fidelidade........: Desconto de 18%
+Margem de venda...: 35%
+Preço final.......: 122,74
+

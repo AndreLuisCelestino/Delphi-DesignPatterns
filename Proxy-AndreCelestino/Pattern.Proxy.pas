@@ -1,9 +1,9 @@
-unit uProxy;
+unit Pattern.Proxy;
 
 interface
 
 uses
-  DBClient, uSubject, Data.DBXJSONReflect;
+  DBClient, Pattern.Subject, Data.DBXJSONReflect;
 
 type
   { Proxy }
@@ -24,7 +24,7 @@ type
 implementation
 
 uses
-  DB, Variants, SysUtils, Forms, uRealSubject;
+  DB, Variants, SysUtils, Forms, Pattern.RealSubject;
 
 { TCalculadorProxy }
 

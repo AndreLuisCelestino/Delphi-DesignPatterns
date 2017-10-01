@@ -1,9 +1,9 @@
-unit uAbstractExpression;
+unit Pattern.AbstractExpression;
 
 interface
 
 uses
-  Classes, uContext;
+  Classes, Pattern.Context;
 
 type
   { AbstractExpression }

@@ -2,10 +2,10 @@ program ExemploInterpreter;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uContext in 'uContext.pas',
-  uAbstractExpression in 'uAbstractExpression.pas',
-  uTerminalExpression in 'uTerminalExpression.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Context in 'Pattern.Context.pas',
+  Pattern.AbstractExpression in 'Pattern.AbstractExpression.pas',
+  Pattern.TerminalExpression in 'Pattern.TerminalExpression.pas';
 
 {$R *.res}
 

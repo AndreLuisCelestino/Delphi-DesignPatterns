@@ -1,9 +1,9 @@
-unit uTerminalExpression;
+unit Pattern.TerminalExpression;
 
 interface
 
 uses
-  uAbstractExpression, uContext;
+  Pattern.AbstractExpression, Pattern.Context;
 
 type
   { TerminalExpression }

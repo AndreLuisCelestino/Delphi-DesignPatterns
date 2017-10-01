@@ -2,9 +2,9 @@ program ExemploChainOfResponsibility;
 
 uses
   Vcl.Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uHandler in 'uHandler.pas',
-  uConcreteHandler in 'uConcreteHandler.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Handler in 'Pattern.Handler.pas',
+  Pattern.ConcreteHandler in 'Pattern.ConcreteHandler.pas';
 
 {$R *.res}
 

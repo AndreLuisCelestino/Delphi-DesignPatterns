@@ -2,11 +2,11 @@ program ExemploCommand;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uInvoker in 'uInvoker.pas',
-  uCommand in 'uCommand.pas',
-  uReceiver in 'uReceiver.pas',
-  uConcreteCommand in 'uConcreteCommand.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Invoker in 'Pattern.Invoker.pas',
+  Pattern.Command in 'Pattern.Command.pas',
+  Pattern.Receiver in 'Pattern.Receiver.pas',
+  Pattern.ConcreteCommand in 'Pattern.ConcreteCommand.pas';
 
 {$R *.res}
 

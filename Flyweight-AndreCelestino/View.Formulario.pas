@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Flyweight com Delphi
@@ -9,9 +9,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, DBClient, StdCtrls, Buttons, Grids, DBGrids, uFlyweightFactory;
+  Dialogs, DB, DBClient, StdCtrls, Buttons, Grids, DBGrids, Pattern.FlyweightFactory;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     ClientDataSet: TClientDataSet;
     ClientDataSetCodigo: TIntegerField;
@@ -32,7 +33,7 @@ var
 implementation
 
 uses
-  ShellAPI, DateUtils, uFlyweight, uConcreteFlyweight;
+  ShellAPI, DateUtils, Pattern.Flyweight, Pattern.ConcreteFlyweight;
 
 {$R *.dfm}
 
@@ -40,8 +41,6 @@ procedure TfFormulario.FormCreate(Sender: TObject);
 begin
   // carrega os dados dos leitores a partir de um XML
   ClientDataSet.LoadFromFile(ExtractFilePath(ParamStr(0)) + 'Dados.xml');
-
-
 end;
 
 procedure TfFormulario.BitBtnExportarComFlyweightClick(Sender: TObject);

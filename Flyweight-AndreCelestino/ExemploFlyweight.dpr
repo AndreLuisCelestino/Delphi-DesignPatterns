@@ -2,10 +2,10 @@ program ExemploFlyweight;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uFlyweight in 'uFlyweight.pas',
-  uConcreteFlyweight in 'uConcreteFlyweight.pas',
-  uFlyweightFactory in 'uFlyweightFactory.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Flyweight in 'Pattern.Flyweight.pas',
+  Pattern.ConcreteFlyweight in 'Pattern.ConcreteFlyweight.pas',
+  Pattern.FlyweightFactory in 'Pattern.FlyweightFactory.pas';
 
 {$R *.res}
 

@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Façade com Delphi
@@ -43,7 +43,7 @@ var
 implementation
 
 uses
-  System.UITypes, uFacade;
+  System.UITypes, Pattern.Facade;
 
 {$R *.dfm}
 

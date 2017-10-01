@@ -7,8 +7,8 @@ uses
   Pattern.ConcreteImplementorXLS in 'Pattern.ConcreteImplementorXLS.pas',
   Pattern.ConcreteImplementorHTML in 'Pattern.ConcreteImplementorHTML.pas',
   Pattern.Abstraction in 'Pattern.Abstraction.pas',
-  Pattern.RefinedAbstractionClientes in 'Pattern.RefinedAbstractionClientes.pas',
-  Pattern.RefinedAbstractionProdutos in 'Pattern.RefinedAbstractionProdutos.pas';
+  Pattern.RefinedAbstraction.Clientes in 'Pattern.RefinedAbstraction.Clientes.pas',
+  Pattern.RefinedAbstraction.Produtos in 'Pattern.RefinedAbstraction.Produtos.pas';
   
 
 {$R *.res}
