@@ -1,9 +1,9 @@
-unit uNomeUsuarioDecorator;
+unit Pattern.Decorator.NomeUsuario;
 
 interface
 
 uses
-  uDecorator;
+  Pattern.Decorator;
 
 type
   { Concrete Decorator }

@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Decorator com Delphi
@@ -12,6 +12,7 @@ uses
   Dialogs, StdCtrls, Buttons, AppEvnts;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     GroupBox: TGroupBox;
     CheckBoxDataHora: TCheckBox;
@@ -22,6 +23,7 @@ type
     ApplicationEvents: TApplicationEvents;
     procedure ApplicationEventsException(Sender: TObject; E: Exception);
     procedure BitBtnGerarExcecaoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   end;
 
 var
@@ -30,8 +32,8 @@ var
 implementation
 
 uses
-  uComponent, uConcreteComponent, uDataHoraDecorator,
-  uNomeUsuarioDecorator, uVersaoWindowsDecorator;
+  System.UITypes, Pattern.Component, Pattern.ConcreteComponent, Pattern.Decorator.DataHora,
+  Pattern.Decorator.NomeUsuario, Pattern.Decorator.VersaoWindows;
 
 {$R *.dfm}
 
@@ -62,6 +64,13 @@ procedure TfFormulario.BitBtnGerarExcecaoClick(Sender: TObject);
 begin
   // gera uma exceção para entrar no evento "OnException" do TApplicationEvents
   raise Exception.Create('Exceção de exemplo para teste!');
+end;
+
+procedure TfFormulario.FormShow(Sender: TObject);
+begin
+  MessageDlg('Devido à restrições do Windows 10, a aplicação deverá ser executada ' +
+    'com privilégios de Administrador para que a extração da versão do Windows funcione.',
+    mtWarning, [mbOK], 0);
 end;
 
 end.

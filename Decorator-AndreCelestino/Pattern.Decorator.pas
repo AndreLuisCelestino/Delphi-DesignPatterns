@@ -1,9 +1,9 @@
-unit uDecorator;
+unit Pattern.Decorator;
 
 interface
 
 uses
-  uComponent;
+  Pattern.Component;
 
 type
   { Decorator }

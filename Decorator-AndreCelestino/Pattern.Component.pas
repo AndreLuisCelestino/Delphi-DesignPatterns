@@ -1,4 +1,4 @@
-unit uComponent;
+unit Pattern.Component;
 
 interface
 

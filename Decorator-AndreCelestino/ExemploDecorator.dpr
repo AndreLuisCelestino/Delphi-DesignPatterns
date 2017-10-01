@@ -2,13 +2,13 @@ program ExemploDecorator;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uComponent in 'uComponent.pas',
-  uConcreteComponent in 'uConcreteComponent.pas',
-  uDecorator in 'uDecorator.pas',
-  uDataHoraDecorator in 'uDataHoraDecorator.pas',
-  uNomeUsuarioDecorator in 'uNomeUsuarioDecorator.pas',
-  uVersaoWindowsDecorator in 'uVersaoWindowsDecorator.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Component in 'Pattern.Component.pas',
+  Pattern.ConcreteComponent in 'Pattern.ConcreteComponent.pas',
+  Pattern.Decorator in 'Pattern.Decorator.pas',
+  Pattern.Decorator.DataHora in 'Pattern.Decorator.DataHora.pas',
+  Pattern.Decorator.NomeUsuario in 'Pattern.Decorator.NomeUsuario.pas',
+  Pattern.Decorator.VersaoWindows in 'Pattern.Decorator.VersaoWindows.pas';
 
 {$R *.res}
 

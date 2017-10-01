@@ -1,9 +1,9 @@
-unit uDataHoraDecorator;
+unit Pattern.Decorator.DataHora;
 
 interface
 
 uses
-  uDecorator;
+  Pattern.Decorator;
 
 type
   { Concrete Decorator }

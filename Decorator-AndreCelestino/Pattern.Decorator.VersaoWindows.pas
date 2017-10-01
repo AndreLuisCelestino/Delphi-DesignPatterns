@@ -1,9 +1,9 @@
-unit uVersaoWindowsDecorator;
+unit Pattern.Decorator.VersaoWindows;
 
 interface
 
 uses
-  uDecorator;
+  Pattern.Decorator;
 
 type
   { Concrete Decorator }

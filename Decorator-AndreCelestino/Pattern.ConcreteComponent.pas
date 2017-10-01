@@ -1,9 +1,9 @@
-unit uConcreteComponent;
+unit Pattern.ConcreteComponent;
 
 interface
 
 uses
-  SysUtils, uComponent;
+  SysUtils, Pattern.Component;
 
 type
   { Concrete Component }
