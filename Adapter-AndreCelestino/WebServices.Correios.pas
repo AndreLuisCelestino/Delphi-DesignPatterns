@@ -1,4 +1,4 @@
-unit uWSDL_Correios;
+unit WebServices.Correios;
 
 interface
 

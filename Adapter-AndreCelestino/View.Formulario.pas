@@ -1,4 +1,4 @@
-unit uTela;
+unit View.Formulario;
 
 {
   Exemplo de Adapter com Delphi
@@ -12,7 +12,8 @@ uses
   Dialogs, StdCtrls, Buttons, Mask;
 
 type
-  TfTela = class(TForm)
+  { Client }
+  TfFormulario = class(TForm)
     lbCEP: TLabel;
     lbCidade: TLabel;
     EditCidade: TEdit;
@@ -34,16 +35,17 @@ type
   end;
 
 var
-  fTela: TfTela;
+  fFormulario: TfFormulario;
 
 implementation
 
 uses
-  uWebServiceViaCEP, uWebServiceCorreios, uComunicador, uAdapter, System.UITypes;
+   System.UITypes, WebService.ViaCEP, Pattern.Target, Pattern.Adapter,
+   Pattern.Adaptee;
 
 {$R *.dfm}
 
-procedure TfTela.btnViaCEPClick(Sender: TObject);
+procedure TfFormulario.btnViaCEPClick(Sender: TObject);
 var
   WebServiceViaCEP: TWebServiceViaCEP;
   Comunicador: TComunicador;
@@ -80,7 +82,7 @@ begin
   end;
 end;
 
-procedure TfTela.btnCorreiosClick(Sender: TObject);
+procedure TfFormulario.btnCorreiosClick(Sender: TObject);
 var
   WebServiceCorreios: TWebServiceCorreios;
   Adapter: TAdapter;
@@ -127,7 +129,7 @@ begin
   end;
 end;
 
-function TfTela.ValidarCEP: boolean;
+function TfFormulario.ValidarCEP: boolean;
 begin
   // função para verificar se o CEP é válido,
   // testando se o número de caracteres é igual a 8
@@ -141,7 +143,7 @@ begin
   end;
 end;
 
-procedure TfTela.IndicarStatusDeProcessamento;
+procedure TfFormulario.IndicarStatusDeProcessamento;
 begin
   // preenche a propriedade Text dos componentes TEdit com o texto "Aguarde"
   EditLogradouro.Text := 'Aguarde...';

@@ -1,9 +1,9 @@
-unit uWebServiceCorreios;
+unit Pattern.Adaptee;
 
 interface
 
 uses
-  uWSDL_Correios, Classes;
+  WebService.Correios, Classes;
 
 type
   { Adaptee }

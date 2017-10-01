@@ -1,9 +1,9 @@
-unit uAdapter;
+unit Pattern.Adapter;
 
 interface
 
 uses
-  Classes, SysUtils, uInterfaceViaCEP, uWebServiceCorreios, uWSDL_Correios;
+  Classes, SysUtils, Interfaces.ViaCEP, Pattern.Adaptee;
 
 type
   { Adapter }

@@ -1,9 +1,9 @@
-unit uComunicador;
+unit Pattern.Target;
 
 interface
 
 uses
-  Classes, uInterfaceViaCEP;
+  Classes, Interfaces.ViaCEP;
 
 type
   { Target }

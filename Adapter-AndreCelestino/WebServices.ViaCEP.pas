@@ -1,9 +1,9 @@
-unit uWebServiceViaCEP;
+unit WebServices.ViaCEP;
 
 interface
 
 uses
-  XMLDoc, XMLIntf, uInterfaceViaCEP;
+  XMLDoc, XMLIntf, Interfaces.ViaCEP;
 
 type
   TWebServiceViaCEP = class(TInterfacedObject, IWebServiceViaCEP)
