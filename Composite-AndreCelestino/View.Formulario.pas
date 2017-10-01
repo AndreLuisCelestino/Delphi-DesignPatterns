@@ -1,4 +1,4 @@
-unit uFormulario;
+unit View.Formulario;
 
 {
   Exemplo de Composite com Delphi
@@ -9,9 +9,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls, uComposite;
+  Dialogs, StdCtrls, Buttons, ExtCtrls, Pattern.Composite;
 
 type
+  { Client }
   TfFormulario = class(TForm)
     BitBtnCalcular: TBitBtn;
     LabelTotal: TLabel;
@@ -37,7 +38,7 @@ var
 implementation
 
 uses
-  System.UITypes, uComponent, uLeaf, uValoresSingleton;
+  System.UITypes, Pattern.Component, Pattern.Leaf, Singleton.Valores;
 
 {$R *.dfm}
 

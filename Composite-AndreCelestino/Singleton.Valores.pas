@@ -1,4 +1,4 @@
-unit uValoresSingleton;
+unit Singleton.Valores;
 
 interface
 

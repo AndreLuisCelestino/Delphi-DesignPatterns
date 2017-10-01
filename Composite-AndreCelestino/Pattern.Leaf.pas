@@ -1,9 +1,9 @@
-unit uLeaf;
+unit Pattern.Leaf;
 
 interface
 
 uses
-  uComponent;
+  Pattern.Component;
 
 type
   { Leaf }
@@ -22,7 +22,7 @@ type
 implementation
 
 uses
-  uValoresSingleton;
+  Singleton.Valores;
 
 { TViagem }
 

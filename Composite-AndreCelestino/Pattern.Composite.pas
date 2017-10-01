@@ -1,9 +1,9 @@
-unit uComposite;
+unit Pattern.Composite;
 
 interface
 
 uses
-  Classes, uComponent, uLeaf, System.Generics.Collections;
+  Classes, Pattern.Component, Pattern.Leaf, System.Generics.Collections;
 
 type
   { Composite }

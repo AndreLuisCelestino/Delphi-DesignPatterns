@@ -2,11 +2,11 @@ program ExemploComposite;
 
 uses
   Forms,
-  uFormulario in 'uFormulario.pas' {fFormulario},
-  uComponent in 'uComponent.pas',
-  uLeaf in 'uLeaf.pas',
-  uComposite in 'uComposite.pas',
-  uValoresSingleton in 'uValoresSingleton.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Component in 'Pattern.Component.pas',
+  Pattern.Leaf in 'Pattern.Leaf.pas',
+  Pattern.Composite in 'Pattern.Composite.pas',
+  Singleton.Valores in 'Singleton.Valores.pas';
 
 {$R *.res}
 
