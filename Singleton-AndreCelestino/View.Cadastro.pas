@@ -1,4 +1,4 @@
-unit uCadastro;
+unit View.Cadastro;
 
 interface
 
@@ -31,7 +31,7 @@ var
 implementation
 
 uses
-  uLoggerSingleton;
+  Pattern.Singleton;
 
 {$R *.dfm}
 

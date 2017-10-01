@@ -1,4 +1,4 @@
-unit uSorteio;
+unit View.Sorteio;
 
 interface
 
@@ -26,7 +26,7 @@ var
 implementation
 
 uses
-  uLoggerSingleton;
+  Pattern.Singleton;
 
 {$R *.dfm}
 

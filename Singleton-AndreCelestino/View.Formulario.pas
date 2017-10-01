@@ -1,4 +1,4 @@
-unit uTela;
+unit View.Formulario;
 
 {
   Exemplo de Singleton com Delphi
@@ -15,10 +15,10 @@ type
   TfTela = class(TForm)
     BitBtnCadastrarParticipantes: TBitBtn;
     BitBtnRealizarSorteio: TBitBtn;
-    Bevel: TBevel;
     BitBtnAbrirLog: TBitBtn;
-    procedure BitBtnAbrirLogClick(Sender: TObject);
+    Bevel: TBevel;
     procedure FormShow(Sender: TObject);
+    procedure BitBtnAbrirLogClick(Sender: TObject);
     procedure BitBtnCadastrarParticipantesClick(Sender: TObject);
     procedure BitBtnRealizarSorteioClick(Sender: TObject);
   end;
@@ -29,7 +29,7 @@ var
 implementation
 
 uses
-  ShellAPI, uLoggerSingleton, uCadastro, uSorteio;
+  ShellAPI, Pattern.Singleton, View.Cadastro, View.Sorteio;
 
 {$R *.dfm}
 

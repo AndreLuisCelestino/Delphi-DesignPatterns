@@ -1,8 +1,9 @@
-unit uLoggerSingleton;
+unit Pattern.Singleton;
 
 interface
 
 type
+  { Singleton }
   TLoggerSingleton = class
   private
     // variável que aponta para o arquivo de log
