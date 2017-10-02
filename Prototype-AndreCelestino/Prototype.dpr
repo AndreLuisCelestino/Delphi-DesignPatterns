@@ -1,15 +1,16 @@
-program Prototype;
+﻿program Prototype;
 
 uses
   Forms,
-  uTela in 'uTela.pas' {fTela},
-  uReuniao in 'uReuniao.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Prototype in 'Pattern.Prototype.pas',
+  Pattern.ConcretePrototype in 'Pattern.ConcretePrototype.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.Title := 'Exemplo de Prototype';
-  Application.CreateForm(TfTela, fTela);
+  Application.Title := 'Exemplo de Prototype - André Celestino';
+  Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.

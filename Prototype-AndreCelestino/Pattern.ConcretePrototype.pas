@@ -1,12 +1,13 @@
-unit uReuniao;
+unit Pattern.ConcretePrototype;
 
 interface
 
 uses
-  SysUtils, Controls, Graphics;
+  SysUtils, Controls, Graphics, Pattern.Prototype;
 
 type
-  TReuniao = class
+  { Concrete Prototype }
+  TConcretePrototype = class(TInterfacedObject, IPrototype)
   private
     FNome: string;
     FData: TDate;
@@ -17,7 +18,7 @@ type
     constructor Create;
 
     // método principal do Prototype
-    function Clonar: TReuniao;
+    function Clonar: IPrototype;
 
     property Nome: string read FNome write FNome;
     property Data: TDate read FData write FData;
@@ -30,12 +31,12 @@ implementation
 
 { TReuniao }
 
-function TReuniao.Clonar: TReuniao;
+function TConcretePrototype.Clonar: IPrototype;
 var
-  NovaReuniao: TReuniao;
+  NovaReuniao: TConcretePrototype;
 begin
   // cria um novo objeto
-  NovaReuniao := TReuniao.Create;
+  NovaReuniao := TConcretePrototype.Create;
 
   // copia todas as propriedades do objeto atual,
   // atribuindo-as ao clone
@@ -49,7 +50,7 @@ begin
   result := NovaReuniao;
 end;
 
-constructor TReuniao.Create;
+constructor TConcretePrototype.Create;
 begin
   FData := Date;
   FHora := Time;

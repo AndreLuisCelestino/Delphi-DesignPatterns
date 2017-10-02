@@ -1,4 +1,4 @@
-unit uTela;
+unit View.Formulario;
 
 {
   Exemplo de Prototype com Delphi
@@ -9,25 +9,27 @@ interface
 
 uses
   System.UITypes, Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ComCtrls, Contnrs, ExtCtrls, uReuniao;
+  Dialogs, StdCtrls, Buttons, ComCtrls, Contnrs, ExtCtrls, Pattern.Prototype, Pattern.ConcretePrototype,
+  System.Generics.Collections;
 
 type
-  TfTela = class(TForm)
-    LabelListaReunioes: TLabel;
-    ListBox: TListBox;
-    BitBtnNova: TBitBtn;
+  { Client }
+  TfFormulario = class(TForm)
     BitBtnDuplicar: TBitBtn;
-    Panel: TPanel;
-    LabelNomeReuniao: TLabel;
-    EditNome: TEdit;
-    LabelData: TLabel;
-    DateTimePickerData: TDateTimePicker;
-    LabelHora: TLabel;
-    DateTimePickerHora: TDateTimePicker;
-    LabelCategoria: TLabel;
+    BitBtnNova: TBitBtn;
     ColorBoxCategoria: TColorBox;
+    DateTimePickerData: TDateTimePicker;
+    DateTimePickerHora: TDateTimePicker;
+    EditNome: TEdit;
+    LabelCategoria: TLabel;
+    LabelData: TLabel;
+    LabelHora: TLabel;
+    LabelListaReunioes: TLabel;
+    LabelNomeReuniao: TLabel;
     LabelParticipantes: TLabel;
+    ListBox: TListBox;
     MemoParticipantes: TMemo;
+    Panel: TPanel;
     procedure EditNomeExit(Sender: TObject);
     procedure DateTimePickerDataExit(Sender: TObject);
     procedure BitBtnDuplicarClick(Sender: TObject);
@@ -39,35 +41,35 @@ type
     procedure MemoParticipantesExit(Sender: TObject);
   private
     // lista de objetos que armazenará as reuniões
-    ListaReunioes: TObjectList;
+    ListaReunioes: TList<IPrototype>;
 
     // variável para armazenar a reunião atualmente selecionada
-    ReuniaoSelecionada: TReuniao;
+    ReuniaoSelecionada: TConcretePrototype;
 
     procedure AdicionarNovaReuniaoNaListBox;
     procedure PreencherDados;
   end;
 
 var
-  fTela: TfTela;
+  fFormulario: TfFormulario;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfTela.EditNomeExit(Sender: TObject);
+procedure TfFormulario.EditNomeExit(Sender: TObject);
 begin
   ReuniaoSelecionada.Nome := Trim(EditNome.Text);
 end;
 
-procedure TfTela.DateTimePickerDataExit(Sender: TObject);
+procedure TfFormulario.DateTimePickerDataExit(Sender: TObject);
 begin
   ReuniaoSelecionada.Data := DateTimePickerData.Date;
 end;
 
-procedure TfTela.BitBtnDuplicarClick(Sender: TObject);
+procedure TfFormulario.BitBtnDuplicarClick(Sender: TObject);
 var
-  ReuniaoClone: TReuniao;
+  ReuniaoClone: IPrototype;
 begin
   if ListBox.Count = 0 then
   begin
@@ -92,14 +94,14 @@ begin
   EditNome.SetFocus;
 end;
 
-procedure TfTela.BitBtnNovaClick(Sender: TObject);
+procedure TfFormulario.BitBtnNovaClick(Sender: TObject);
 var
-  NovaReuniao: TReuniao;
+  NovaReuniao: IPrototype;
 begin
   Panel.Visible := True;
 
   // comando para CRIAR uma nova reunião
-  NovaReuniao := TReuniao.Create;
+  NovaReuniao := TConcretePrototype.Create;
 
   // adiciona o clone na lista de reuniões
   ListaReunioes.Add(NovaReuniao);
@@ -113,44 +115,44 @@ begin
   EditNome.SetFocus;
 end;
 
-procedure TfTela.FormCreate(Sender: TObject);
+procedure TfFormulario.FormCreate(Sender: TObject);
 begin
   // cria a lista de objetos que armazenará as reuniões
-  ListaReunioes := TObjectList.Create;
+  ListaReunioes := TList<IPrototype>.Create;
 end;
 
-procedure TfTela.ListBoxClick(Sender: TObject);
+procedure TfFormulario.ListBoxClick(Sender: TObject);
 begin
   PreencherDados;
 end;
 
-procedure TfTela.DateTimePickerHoraExit(Sender: TObject);
+procedure TfFormulario.DateTimePickerHoraExit(Sender: TObject);
 begin
   ReuniaoSelecionada.Hora := DateTimePickerHora.Time;
 end;
 
-procedure TfTela.ColorBoxCategoriaExit(Sender: TObject);
+procedure TfFormulario.ColorBoxCategoriaExit(Sender: TObject);
 begin
   ReuniaoSelecionada.Categoria := ColorBoxCategoria.Selected;
 end;
 
-procedure TfTela.MemoParticipantesExit(Sender: TObject);
+procedure TfFormulario.MemoParticipantesExit(Sender: TObject);
 begin
   ReuniaoSelecionada.Participantes := MemoParticipantes.Text;
 end;
 
-procedure TfTela.AdicionarNovaReuniaoNaListBox;
+procedure TfFormulario.AdicionarNovaReuniaoNaListBox;
 begin
   // adiciona um novo item na ListBox
   ListBox.Items.Add('Reunião #' + IntToStr(ListBox.Items.Count + 1));
   ListBox.ItemIndex := ListBox.Items.Count - 1;
 end;
 
-procedure TfTela.PreencherDados;
+procedure TfFormulario.PreencherDados;
 begin
   // seleciona a reunião na lista de objetos conforme o ItemIndex da ListBox
   // e atribui à variável FoReuniaoSelecionada
-  ReuniaoSelecionada := ListaReunioes[ListBox.ItemIndex] as TReuniao;
+  ReuniaoSelecionada := ListaReunioes[ListBox.ItemIndex] as TConcretePrototype;
 
   EditNome.Text := ReuniaoSelecionada.Nome;
   DateTimePickerData.Date := ReuniaoSelecionada.Data;
