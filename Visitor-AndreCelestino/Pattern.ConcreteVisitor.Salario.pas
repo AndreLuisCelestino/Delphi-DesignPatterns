@@ -1,9 +1,9 @@
-unit Pattern.ConcreteVisitorSalario;
+unit Pattern.ConcreteVisitor.Salario;
 
 interface
 
 uses
-  Pattern.Visitor, Pattern.ConcreteElementProgramador, Pattern.ConcreteElementGerente;
+  Pattern.Visitor, Pattern.ConcreteElement.Programador, Pattern.ConcreteElement.Gerente;
 
 type
   TSalario = class(TInterfacedObject, IVisitor)

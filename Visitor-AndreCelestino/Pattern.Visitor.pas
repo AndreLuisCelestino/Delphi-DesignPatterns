@@ -3,7 +3,7 @@ unit Pattern.Visitor;
 interface
 
 uses
-  Pattern.ConcreteElementProgramador, Pattern.ConcreteElementGerente;
+  Pattern.ConcreteElement.Programador, Pattern.ConcreteElement.Gerente;
 
 type
   { Visitor }

@@ -1,9 +1,9 @@
-unit Pattern.ConcreteVisitorSenioridade;
+unit Pattern.ConcreteVisitor.Senioridade;
 
 interface
 
 uses
-  Pattern.Visitor, Pattern.ConcreteElementProgramador, Pattern.ConcreteElementGerente;
+  Pattern.Visitor, Pattern.ConcreteElement.Programador, Pattern.ConcreteElement.Gerente;
 
 type
   { Concrete Visitor }

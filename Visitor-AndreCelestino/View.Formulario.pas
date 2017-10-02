@@ -54,8 +54,8 @@ var
 implementation
 
 uses
-  Pattern.Visitor, Pattern.ConcreteVisitorSalario, Pattern.ConcreteVisitorSenioridade,
-  Pattern.Element, Pattern.ConcreteElementProgramador, Pattern.ConcreteElementGerente;
+  Pattern.Visitor, Pattern.ConcreteVisitor.Salario, Pattern.ConcreteVisitor.Senioridade,
+  Pattern.Element, Pattern.ConcreteElement.Programador, Pattern.ConcreteElement.Gerente;
 
 {$R *.dfm}
 

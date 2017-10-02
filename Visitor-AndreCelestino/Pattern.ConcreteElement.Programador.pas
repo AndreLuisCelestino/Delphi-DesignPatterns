@@ -1,4 +1,4 @@
-unit Pattern.ConcreteElementGerente;
+unit Pattern.ConcreteElement.Programador;
 
 interface
 
@@ -7,7 +7,7 @@ uses
 
 type
   { Concrete Element - subclasse }
-  TGerente = class(TFuncionario)
+  TProgramador = class(TFuncionario)
   public
     procedure Accept(Visitor: IInterface); override;
   end;
@@ -17,9 +17,9 @@ implementation
 uses
   System.SysUtils, Pattern.Visitor;
 
-{ TGerente }
+{ TProgramador }
 
-procedure TGerente.Accept(Visitor: IInterface);
+procedure TProgramador.Accept(Visitor: IInterface);
 var
   ConcreteVisitor: IVisitor;
 begin
