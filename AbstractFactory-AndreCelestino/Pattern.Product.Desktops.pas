@@ -1,11 +1,12 @@
-unit uDesktops;
+unit Pattern.Product.Desktops;
 
 interface
 
 uses
-  uInterfaces;
+  Pattern.AbstractProduct;
 
 type
+  { Product }
   TInspiron = class(TInterfacedObject, IDesktop)
   private
     function BuscarNome: string;
@@ -13,6 +14,7 @@ type
     function BuscarTamanhoHD: string;
   end;
 
+  { Product }
   TIMac = class(TInterfacedObject, IDesktop)
   private
     function BuscarNome: string;
@@ -20,6 +22,7 @@ type
     function BuscarTamanhoHD: string;
   end;
 
+  { Product }
   TThinkCentre = class(TInterfacedObject, IDesktop)
   private
     function BuscarNome: string;

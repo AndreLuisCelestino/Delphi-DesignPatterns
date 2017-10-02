@@ -1,11 +1,12 @@
-unit uNotebooks;
+unit Pattern.Product.Notebooks;
 
 interface
 
 uses
-  uInterfaces;
+  Pattern.AbstractProduct;
 
 type
+  { Product }
   TVostro = class(TInterfacedObject, INotebook)
   private
     function BuscarNome: string;
@@ -13,6 +14,7 @@ type
     function BuscarMemoriaRAM: string;
   end;
 
+  { Product }
   TMacBook = class(TInterfacedObject, INotebook)
   private
     function BuscarNome: string;
@@ -20,6 +22,7 @@ type
     function BuscarMemoriaRAM: string;
   end;
 
+  { Product }
   TL440 = class(TInterfacedObject, INotebook)
   private
     function BuscarNome: string;

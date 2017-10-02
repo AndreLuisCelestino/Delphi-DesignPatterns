@@ -1,21 +1,24 @@
-unit uMarcas;
+unit Pattern.ConcreteFactory;
 
 interface
 
 uses
-  uInterfaces;
+  Pattern.AbstractFactory, Pattern.AbstractProduct;
 
 type
+  { Concrete Factory }
   TDell = class(TInterfacedObject, IFactoryMarca)
     function ConsultarNotebook: INotebook;
     function ConsultarDesktop: IDesktop;
   end;
 
+  { Concrete Factory }
   TApple = class(TInterfacedObject, IFactoryMarca)
     function ConsultarNotebook: INotebook;
     function ConsultarDesktop: IDesktop;
   end;
 
+  { Concrete Factory }
   TLenovo = class(TInterfacedObject, IFactoryMarca)
     function ConsultarNotebook: INotebook;
     function ConsultarDesktop: IDesktop;
@@ -24,7 +27,7 @@ type
 implementation
 
 uses
-  uNotebooks, uDesktops;
+  Pattern.Product.Desktops, Pattern.Product.Notebooks;
 
 { TDell }
 

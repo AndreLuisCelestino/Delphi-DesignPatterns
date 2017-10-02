@@ -1,4 +1,4 @@
-unit uTela;
+unit View.Formulario;
 
 {
   Exemplo de Abstract Factory com Delphi
@@ -9,10 +9,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, uInterfaces;
+  Dialogs, StdCtrls, ExtCtrls, Pattern.AbstractFactory;
 
 type
-  TfAbstractFactory = class(TForm)
+  { Client }
+  TfFormulario = class(TForm)
     gbDadosNotebook: TGroupBox;
     GroupBoxMarcas: TRadioGroup;
     edtNomeNotebook: TEdit;
@@ -37,12 +38,12 @@ type
   end;
 
 var
-  fAbstractFactory: TfAbstractFactory;
+  fFormulario: TfFormulario;
 
 implementation
 
 uses
-  uMarcas;
+  Pattern.AbstractProduct, Pattern.ConcreteFactory;
 
 const
   nOPCAO_DELL = 0;
@@ -51,7 +52,7 @@ const
 
 {$R *.dfm}
 
-procedure TfAbstractFactory.CriarInstanciaMarca;
+procedure TfFormulario.CriarInstanciaMarca;
 begin
   // Única estrutura condicional da aplicação
   case GroupBoxMarcas.ItemIndex of
@@ -61,13 +62,13 @@ begin
   end;
 end;
 
-procedure TfAbstractFactory.GroupBoxMarcasClick(Sender: TObject);
+procedure TfFormulario.GroupBoxMarcasClick(Sender: TObject);
 begin
   CriarInstanciaMarca;
   MostrarDadosProdutos;
 end;
 
-procedure TfAbstractFactory.MostrarDadosProdutos;
+procedure TfFormulario.MostrarDadosProdutos;
 var
   Notebook: INotebook;
   Desktop: IDesktop;

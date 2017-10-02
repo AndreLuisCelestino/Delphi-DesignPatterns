@@ -1,4 +1,4 @@
-object fAbstractFactory: TfAbstractFactory
+object fFormulario: TfFormulario
   Left = 192
   Top = 125
   BorderIcons = [biSystemMenu, biMinimize]
