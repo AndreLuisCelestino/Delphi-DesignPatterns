@@ -1,11 +1,12 @@
-unit uTipoPrazos;
+unit Pattern.ConcreteProduct;
 
 interface
 
 uses
-  uInterfaces;
+  Pattern.Product;
 
 type
+  { Concrete Product }
   // classe que implementa a Interface ITipoPrazo
   // e servirá como classe base para os tipos de prazos
   TTipoPrazo = class(TInterfacedObject, ITipoPrazo)

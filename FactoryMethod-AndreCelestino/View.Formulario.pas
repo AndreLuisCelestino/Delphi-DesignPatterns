@@ -1,4 +1,4 @@
-unit uTela;
+unit View.Formulario;
 
 {
   Exemplo de Chain of Factory Method com Delphi
@@ -12,7 +12,8 @@ uses
   Dialogs, StdCtrls, Buttons;
 
 type
-  TfTela = class(TForm)
+  { Client }
+  TfFormulario = class(TForm)
     ComboBoxPrazoPagamento: TComboBox;
     EditValor: TEdit;
     LabelValor: TLabel;
@@ -27,16 +28,16 @@ type
   end;
 
 var
-  fTela: TfTela;
+  fFormulario: TfFormulario;
 
 implementation
 
 uses
-  System.UITypes, uInterfaces, uFabricaPrazos;
+  System.UITypes, Pattern.Product, Pattern.Creator, Pattern.ConcreteCreator;
 
 {$R *.dfm}
 
-procedure TfTela.BitBtnGerarProjecaoClick(Sender: TObject);
+procedure TfFormulario.BitBtnGerarProjecaoClick(Sender: TObject);
 var
   FabricaPrazos: IFactoryMethod;
   TipoPrazo: ITipoPrazo;
@@ -68,13 +69,13 @@ begin
   Memo.Lines.Add(TipoPrazo.ConsultarTotal);
 end;
 
-procedure TfTela.EditValorKeyPress(Sender: TObject; var Key: Char);
+procedure TfFormulario.EditValorKeyPress(Sender: TObject; var Key: Char);
 begin
   if not (CharInSet(Key, ['0'..'9', #8, #44])) then
     Key := #0;
 end;
 
-procedure TfTela.EditQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
+procedure TfFormulario.EditQtdeParcelasKeyPress(Sender: TObject; var Key: Char);
 begin
   if not (CharInSet(Key, ['0'..'9', #8])) then
     Key := #0;

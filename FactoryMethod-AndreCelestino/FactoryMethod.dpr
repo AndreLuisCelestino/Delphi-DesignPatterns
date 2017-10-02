@@ -2,16 +2,17 @@ program FactoryMethod;
 
 uses
   Forms,
-  uTela in 'uTela.pas' {fTela},
-  uTipoPrazos in 'uTipoPrazos.pas',
-  uInterfaces in 'uInterfaces.pas',
-  uFabricaPrazos in 'uFabricaPrazos.pas';
+  View.Formulario in 'View.Formulario.pas' {fFormulario},
+  Pattern.Product in 'Pattern.Product.pas',
+  Pattern.Creator in 'Pattern.Creator.pas',
+  Pattern.ConcreteProduct in 'Pattern.ConcreteProduct.pas',
+  Pattern.ConcreteCreator in 'Pattern.ConcreteCreator.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.Title := 'Exemplo de Factory Method';
-  Application.CreateForm(TfTela, fTela);
+  Application.CreateForm(TfFormulario, fFormulario);
   Application.Run;
 end.

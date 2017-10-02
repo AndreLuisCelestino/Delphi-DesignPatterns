@@ -1,9 +1,9 @@
-unit uFabricaPrazos;
+unit Pattern.ConcreteCreator;
 
 interface
 
 uses
-  uInterfaces;
+  Pattern.Creator, Pattern.Product;
 
 type
   TFabricaPrazos = class(TInterfacedObject, IFactoryMethod)
@@ -13,7 +13,7 @@ type
 implementation
 
 uses
-  uTipoPrazos;
+  Pattern.ConcreteProduct;
 
 { TFabricaPrazos }
 

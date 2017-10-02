@@ -1,4 +1,4 @@
-object fTela: TfTela
+object fFormulario: TfFormulario
   Left = 193
   Top = 125
   BorderIcons = [biSystemMenu, biMinimize]
