@@ -1,19 +1,20 @@
 program ExemploBuilder;
 
 uses
-  Forms,
-  uTela in 'uTela.pas' {fTela},
-  uDataModulo in 'uDataModulo.pas' {DataModuleProdutos: TDataModule},
-  uBuilder in 'uBuilder.pas',
-  uInterfaces in 'uInterfaces.pas',
-  uProduto in 'uProduto.pas';
+  Vcl.Forms,
+  View.Formulario in 'View.Formulario.pas' {Form1},
+  Pattern.Builder in 'Pattern.Builder.pas',
+  Pattern.ConcreteBuilder in 'Pattern.ConcreteBuilder.pas',
+  Pattern.Director in 'Pattern.Director.pas',
+  Pattern.Product in 'Pattern.Product.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.Title := 'Exemplo de Builder';
-  Application.CreateForm(TDataModuleProdutos, DataModuleProdutos);
-  Application.CreateForm(TfTela, fTela);
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'Exemplo de Builder - André Celestino';
+  Application.CreateForm(TForm1, Form1);
+  ReportMemoryLeaksOnShutdown := True;
   Application.Run;
 end.
