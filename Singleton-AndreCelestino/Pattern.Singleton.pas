@@ -20,8 +20,6 @@ type
 
     // método para registrar o texto do parâmetro no arquivo de log
     procedure RegistrarLog(const Texto: string);
-
-    destructor Destroy; override;
   end;
 
 var
@@ -48,14 +46,6 @@ begin
     Rewrite(ArquivoLog);
     CloseFile(ArquivoLog);
   end;
-end;
-
-destructor TLoggerSingleton.Destroy;
-begin
-  // libera o Singleton da memória
-  FreeAndNil(Instancia);
-
-  inherited;
 end;
 
 class function TLoggerSingleton.NewInstance: TObject;
@@ -92,5 +82,11 @@ begin
   // fecha o arquivo
   CloseFile(ArquivoLog);
 end;
+
+initialization
+
+finalization
+  FreeAndNil(Instancia);
+
 
 end.
